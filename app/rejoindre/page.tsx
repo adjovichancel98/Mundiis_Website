@@ -38,7 +38,7 @@ export default function RejoindrePage() {
         text="Mundiis regroupe des équipes techniques (matériel, réseau), des développeurs, des spécialistes IA & data, des consultants et des techniciens solaires. Le recrutement suit la croissance de chaque métier, pas un plan figé."
         art={<RejoindreArt3D />}
       />
-      <CoverageGrid eyebrow="Profils recherchés" title="Les métiers autour desquels Mundiis recrute" items={roles} />
+      <CoverageGrid eyebrow="Profils recherchés" title="Les métiers autour desquels Mundiis recrute" items={roles} tilt />
       <SubCta title="Envie de rejoindre l'équipe ?" />
     </>
   );
