@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import type { PointerEvent as ReactPointerEvent } from "react";
+import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 
 const MAX_TILT = 6;
 
-export default function TiltCard({ title, text }: { title: string; text: string }) {
+export default function TiltCard({ children }: { children: ReactNode }) {
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const pointerFine = useMediaQuery("(pointer: fine)");
+  const interactive = pointerFine && !reduceMotion;
   const [hovered, setHovered] = useState(false);
 
   const rotateX = useMotionValue(0);
@@ -17,7 +19,7 @@ export default function TiltCard({ title, text }: { title: string; text: string 
   const springRotateY = useSpring(rotateY, { stiffness: 200, damping: 18 });
 
   function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
-    if (reduceMotion) return;
+    if (!interactive) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
@@ -34,26 +36,21 @@ export default function TiltCard({ title, text }: { title: string; text: string 
   return (
     <motion.div
       onPointerMove={handlePointerMove}
-      onPointerEnter={() => setHovered(true)}
+      onPointerEnter={() => interactive && setHovered(true)}
       onPointerLeave={handlePointerLeave}
       className="flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white"
       style={{
-        perspective: 800,
         rotateX: reduceMotion ? 0 : springRotateX,
         rotateY: reduceMotion ? 0 : springRotateY,
       }}
       animate={{
-        scale: hovered && !reduceMotion ? 1.015 : 1,
+        scale: hovered && interactive ? 1.006 : 1,
         boxShadow:
-          hovered && !reduceMotion ? "0 20px 40px rgba(17,18,20,0.14)" : "0 0px 0px rgba(17,18,20,0)",
+          hovered && interactive ? "0 20px 40px rgba(17,18,20,0.14)" : "0 0px 0px rgba(17,18,20,0)",
       }}
       transition={{ type: "spring", stiffness: 220, damping: 20 }}
     >
-      <span className="mt-[7px] h-2 w-2 flex-none rounded-full bg-coral" />
-      <div>
-        <h3 className="mb-1 text-[15.5px] font-semibold">{title}</h3>
-        <p className="text-[13.5px] leading-[1.55] text-muted">{text}</p>
-      </div>
+      {children}
     </motion.div>
   );
 }

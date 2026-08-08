@@ -22,23 +22,31 @@ export default function CoverageGrid({
           </h2>
         </Reveal>
         <Reveal>
-          <div className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2">
-            {items.map((item, i) =>
-              tilt ? (
-                <TiltCard key={i} title={item.title} text={item.text} />
-              ) : (
-                <div
-                  key={i}
-                  className="flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white"
-                >
+          <div
+            className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2"
+            style={tilt ? { perspective: 800 } : undefined}
+          >
+            {items.map((item, i) => {
+              const body = (
+                <>
                   <span className="mt-[7px] h-2 w-2 flex-none rounded-full bg-coral" />
                   <div>
                     <h3 className="mb-1 text-[15.5px] font-semibold">{item.title}</h3>
                     <p className="text-[13.5px] leading-[1.55] text-muted">{item.text}</p>
                   </div>
+                </>
+              );
+              return tilt ? (
+                <TiltCard key={i}>{body}</TiltCard>
+              ) : (
+                <div
+                  key={i}
+                  className="flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white"
+                >
+                  {body}
                 </div>
-              ),
-            )}
+              );
+            })}
           </div>
         </Reveal>
       </div>
