@@ -4,8 +4,9 @@ import { useState } from "react";
 import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useMediaQuery } from "@/lib/useMediaQuery";
+import { cardClassName } from "./CoverageGrid";
 
-const MAX_TILT = 6;
+const MAX_TILT = 4;
 
 export default function TiltCard({ children }: { children: ReactNode }) {
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
@@ -38,10 +39,10 @@ export default function TiltCard({ children }: { children: ReactNode }) {
       onPointerMove={handlePointerMove}
       onPointerEnter={() => interactive && setHovered(true)}
       onPointerLeave={handlePointerLeave}
-      className="flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white"
+      className={cardClassName}
       style={{
-        rotateX: reduceMotion ? 0 : springRotateX,
-        rotateY: reduceMotion ? 0 : springRotateY,
+        rotateX: interactive ? springRotateX : 0,
+        rotateY: interactive ? springRotateY : 0,
       }}
       animate={{
         scale: hovered && interactive ? 1.006 : 1,

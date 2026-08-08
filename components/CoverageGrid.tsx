@@ -1,6 +1,9 @@
 import Reveal from "./Reveal";
 import TiltCard from "./TiltCard";
 
+export const cardClassName =
+  "flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white";
+
 export default function CoverageGrid({
   eyebrow,
   title,
@@ -24,7 +27,7 @@ export default function CoverageGrid({
         <Reveal>
           <div
             className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2"
-            style={tilt ? { perspective: 800 } : undefined}
+            style={tilt ? { perspective: 2000 } : undefined}
           >
             {items.map((item, i) => {
               const body = (
@@ -39,10 +42,7 @@ export default function CoverageGrid({
               return tilt ? (
                 <TiltCard key={i}>{body}</TiltCard>
               ) : (
-                <div
-                  key={i}
-                  className="flex items-start gap-3.5 bg-paper px-6 py-6 transition-colors hover:bg-white"
-                >
+                <div key={i} className={cardClassName}>
                   {body}
                 </div>
               );
