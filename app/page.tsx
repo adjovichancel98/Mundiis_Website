@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import KineticHeading from "@/components/KineticHeading";
@@ -9,9 +10,21 @@ import { HeroTriangle } from "@/components/illustrations/PageArt";
 import MagneticButton from "@/components/MagneticButton";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
+import HeroFieldBoundary from "@/components/HeroFieldBoundary";
 import { pillars } from "@/lib/pillars";
 import { pillarIcons } from "@/components/icons/PillarIcons";
 import { useMediaQuery } from "@/lib/useMediaQuery";
+
+const HeroField = dynamic(() => import("@/components/HeroField"), { ssr: false });
+
+function StaticHeroField() {
+  return (
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,92,57,0.22),transparent_70%)]"
+    />
+  );
+}
 
 export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -19,7 +32,6 @@ export default function HomePage() {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const copyY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const fieldY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  void fieldY; // consumed by HeroField in the next task
 
   return (
     <>
@@ -28,6 +40,15 @@ export default function HomePage() {
         ref={heroRef}
         className="relative overflow-hidden bg-ink py-14 text-ivory sm:py-20 md:py-[116px]"
       >
+        <motion.div style={reduceMotion ? undefined : { y: fieldY }} className="absolute inset-0">
+          {reduceMotion ? (
+            <StaticHeroField />
+          ) : (
+            <HeroFieldBoundary fallback={<StaticHeroField />}>
+              <HeroField />
+            </HeroFieldBoundary>
+          )}
+        </motion.div>
         <HeroTriangle className="pointer-events-none absolute -right-[6%] -top-[10%] w-[60%] max-w-[520px] rotate-[8deg] opacity-[0.14] max-md:w-[80%] max-md:-right-[20%] max-md:opacity-[0.08]" />
         <motion.div
           style={reduceMotion ? undefined : { y: copyY }}
