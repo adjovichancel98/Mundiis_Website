@@ -12,6 +12,7 @@ export default function CustomCursor() {
 
   const [hovering, setHovering] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
+  const [plain, setPlain] = useState(false);
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.4 });
@@ -27,6 +28,13 @@ export default function CustomCursor() {
     }
     function over(e: MouseEvent) {
       const target = e.target as HTMLElement;
+      if (target.closest("[data-cursor-plain]")) {
+        setLabel(null);
+        setHovering(false);
+        setPlain(true);
+        return;
+      }
+      setPlain(false);
       const labelTarget = target.closest<HTMLElement>("[data-cursor-label]");
       setLabel(labelTarget?.dataset.cursorLabel ?? null);
       setHovering(!!target.closest("a, button, .cursor-hover, input, textarea, select"));
@@ -48,10 +56,12 @@ export default function CustomCursor() {
       className={`pointer-events-none fixed left-0 top-0 z-[100] flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full ${
         label ? "bg-ink" : ""
       }`}
-      style={{ x: springX, y: springY, scale: label ? 3.2 : hovering ? 1.9 : 1 }}
+      style={{ x: springX, y: springY, scale: plain ? 0.35 : label ? 3.2 : hovering ? 1.9 : 1 }}
       transition={{ scale: { type: "tween", duration: 0.18 } }}
     >
-      {label ? (
+      {plain ? (
+        <span className="h-full w-full rounded-full bg-coral" />
+      ) : label ? (
         <span className="whitespace-nowrap font-mono text-[7px] uppercase tracking-[0.08em] text-ivory">
           {label}
         </span>

@@ -43,7 +43,8 @@ export default function Nav() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            className="cursor-hover flex h-10 flex-none items-center gap-2.5 rounded-full border border-line pl-4 pr-3.5"
+            data-cursor-plain
+            className="flex h-10 flex-none items-center gap-2.5 rounded-full border border-line pl-4 pr-3.5"
           >
             <span className="font-mono text-[12px] uppercase tracking-[0.08em]">
               {open ? "Fermer" : "Menu"}
