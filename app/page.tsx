@@ -99,7 +99,6 @@ export default function HomePage() {
             </p>
             <KineticHeading
               as="h2"
-              inView
               text="Cinq métiers, une seule entreprise"
               className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]"
             />
@@ -190,7 +189,6 @@ export default function HomePage() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink">Parlons-en</p>
               <KineticHeading
                 as="h2"
-                inView
                 text="Un projet à équiper, à digitaliser, ou à alimenter ?"
                 className="mt-2.5 max-w-[16ch] text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[40px]"
               />

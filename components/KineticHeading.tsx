@@ -6,12 +6,10 @@ export default function KineticHeading({
   text,
   className,
   as: Tag = "h1",
-  inView = false,
 }: {
   text: string;
   className?: string;
   as?: "h1" | "h2";
-  inView?: boolean;
 }) {
   const words = text.split(" ");
 
@@ -22,9 +20,7 @@ export default function KineticHeading({
           <motion.span
             className="inline-block"
             initial={{ y: "115%" }}
-            {...(inView
-              ? { whileInView: { y: 0 }, viewport: { once: true, amount: 0.4 } }
-              : { animate: { y: 0 } })}
+            animate={{ y: 0 }}
             transition={{
               duration: 0.85,
               ease: [0.19, 1, 0.22, 1],
