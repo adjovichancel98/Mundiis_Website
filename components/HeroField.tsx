@@ -34,7 +34,7 @@ const GradientFieldMaterial = shaderMaterial(
     void main() {
       vec2 center = vec2(0.5, 0.45) + uMouse * 0.06;
       float dist = distance(vUv, center);
-      float glow = smoothstep(0.9, 0.0, dist);
+      float glow = 1.0 - smoothstep(0.0, 0.9, dist);
       vec3 color = mix(uInk, uCoral, glow * 0.35);
       float n = (grain(vUv * 500.0 + uTime * 6.0) - 0.5) * 0.035;
       gl_FragColor = vec4(color + n, 1.0);
