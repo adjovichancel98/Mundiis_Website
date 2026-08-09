@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import KineticHeading from "@/components/KineticHeading";
 import HeroMark from "@/components/HeroMark";
 import { HeroTriangle } from "@/components/illustrations/PageArt";
@@ -10,14 +11,28 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import { pillars } from "@/lib/pillars";
 import { pillarIcons } from "@/components/icons/PillarIcons";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const copyY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const fieldY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  void fieldY; // consumed by HeroField in the next task
+
   return (
     <>
       {/* HERO */}
-      <header className="relative overflow-hidden bg-ink py-14 text-ivory sm:py-20 md:py-[116px]">
+      <header
+        ref={heroRef}
+        className="relative overflow-hidden bg-ink py-14 text-ivory sm:py-20 md:py-[116px]"
+      >
         <HeroTriangle className="pointer-events-none absolute -right-[6%] -top-[10%] w-[60%] max-w-[520px] rotate-[8deg] opacity-[0.14] max-md:w-[80%] max-md:-right-[20%] max-md:opacity-[0.08]" />
-        <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-8 px-5 sm:px-8 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
+        <motion.div
+          style={reduceMotion ? undefined : { y: copyY }}
+          className="relative z-10 mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-8 px-5 sm:px-8 md:grid-cols-[1.15fr_0.85fr] md:gap-14"
+        >
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
               Mundiis — Entreprise technologique, Bénin
@@ -51,7 +66,7 @@ export default function HomePage() {
             </motion.div>
           </div>
           <HeroMark />
-        </div>
+        </motion.div>
       </header>
 
       {/* PILLARS */}
@@ -61,9 +76,12 @@ export default function HomePage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
               Ce que nous faisons
             </p>
-            <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
-              Cinq métiers, une seule entreprise
-            </h2>
+            <KineticHeading
+              as="h2"
+              inView
+              text="Cinq métiers, une seule entreprise"
+              className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]"
+            />
             <p className="mt-3.5 text-[15.5px] leading-[1.65] text-muted">
               Cliquez une activité pour voir en détail ce qu&rsquo;elle couvre.
             </p>
@@ -81,6 +99,7 @@ export default function HomePage() {
                 >
                   <Link
                     href={`/${p.slug}`}
+                    data-cursor-label="Voir"
                     className={`group flex h-full cursor-pointer flex-col gap-3.5 p-6 transition-colors sm:p-8 ${
                       lead ? "bg-ink text-ivory hover:bg-[#1B1D22]" : "bg-paper hover:bg-white"
                     }`}
@@ -148,9 +167,12 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-8">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink">Parlons-en</p>
-              <h2 className="mt-2.5 max-w-[16ch] text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[40px]">
-                Un projet à équiper, à digitaliser, ou à alimenter ?
-              </h2>
+              <KineticHeading
+                as="h2"
+                inView
+                text="Un projet à équiper, à digitaliser, ou à alimenter ?"
+                className="mt-2.5 max-w-[16ch] text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[40px]"
+              />
               <p className="mt-3 max-w-[42ch] text-[15px] text-ink/72">
                 Décrivez votre besoin — matériel, logiciel, IA, conseil ou énergie solaire.
               </p>
