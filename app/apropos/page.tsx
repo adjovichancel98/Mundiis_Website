@@ -100,6 +100,111 @@ export default function AproposPage() {
         </div>
       </section>
 
+      {/* VISION */}
+      <section className="py-14 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+          <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+              Notre vision
+            </p>
+            <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
+              Le socle technologique d&rsquo;un groupe qui grandit
+            </h2>
+            <p className="mt-3.5 max-w-[62ch] text-[15.5px] leading-[1.65] text-muted">
+              Mundiis entre par la technologie, puis s&rsquo;étend méthodiquement vers les secteurs
+              qui construisent une région. L&rsquo;ambition dépasse le seul numérique : sur quinze à
+              vingt ans, devenir un groupe diversifié au service du développement de l&rsquo;Afrique
+              de l&rsquo;Ouest.
+            </p>
+          </Reveal>
+          <div className="flex flex-col">
+            {[
+              {
+                yr: "Aujourd'hui",
+                title: "Le socle technologique",
+                text: "Équipements IT, logiciel, IA, data, conseil et formation.",
+              },
+              {
+                yr: "Court terme",
+                title: "Énergie & durable",
+                text: "Montée en puissance du pôle solaire et des infrastructures énergétiques.",
+              },
+              {
+                yr: "Moyen terme",
+                title: "Nouveaux secteurs",
+                text: "Extension vers l'agritech et l'immobilier, portée par les revenus du socle.",
+              },
+              {
+                yr: "15 à 20 ans",
+                title: "Groupe régional",
+                text: "Un groupe diversifié présent dans plusieurs pays de la CEDEAO.",
+              },
+            ].map((phase, i) => (
+              <Reveal key={phase.yr} delay={i * 0.08}>
+                <div className="grid grid-cols-1 gap-2 border-t border-line py-6 last:border-b sm:grid-cols-[140px_1fr] sm:gap-6">
+                  <span className="font-mono text-[12.5px] font-semibold text-coral">{phase.yr}</span>
+                  <div>
+                    <h3 className="mb-1.5 text-[16.5px] font-semibold">{phase.title}</h3>
+                    <p className="max-w-[58ch] text-[14px] leading-[1.6] text-muted">{phase.text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LABS */}
+      <section className="border-t border-line bg-ink py-14 text-ivory sm:py-20 md:py-24">
+        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+          <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-line-dark px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/60">
+              <span className="h-1.5 w-1.5 rounded-full bg-coral" />
+              En développement — non commercialisés
+            </span>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+              Mundiis Labs
+            </p>
+            <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight text-ivory sm:text-[32px]">
+              Nos produits en construction
+            </h2>
+            <p className="mt-3.5 max-w-[62ch] text-[15.5px] leading-[1.65] text-ivory/70">
+              Une partie de Mundiis invente ses propres outils. Voici sur quoi l&rsquo;équipe
+              travaille en ce moment.
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line-dark bg-line-dark sm:grid-cols-3">
+            {[
+              {
+                status: "En développement",
+                title: "Sika",
+                text: "Un moteur de recherche documentaire par IA pour les professionnels : retrouver l'information juste dans vos documents, en langage naturel.",
+              },
+              {
+                status: "Prototype",
+                title: "Scan Santé",
+                text: "Une application d'analyse d'ordonnances à partir d'une simple photo, pour rendre l'information médicale plus lisible.",
+              },
+              {
+                status: "En conception",
+                title: "Devis inclusif",
+                text: "Un outil de génération de devis pensé pour le contexte local, intégrant la langue fon pour l'accessibilité.",
+              },
+            ].map((lab, i) => (
+              <Reveal key={lab.title} delay={i * 0.08} className="bg-ink2 px-6 py-7 sm:p-8">
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-coral">
+                  {lab.status}
+                </span>
+                <h3 className="mb-1.5 mt-3.5 font-display text-[19px] font-extrabold tracking-tight text-ivory">
+                  {lab.title}
+                </h3>
+                <p className="text-[13.5px] leading-[1.6] text-ivory/68">{lab.text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY */}
       <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">

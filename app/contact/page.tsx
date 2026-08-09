@@ -39,6 +39,18 @@ export default function ContactPage() {
                 Entreprise technologique basée au Bénin — équipements, logiciels, IA &amp; data,
                 conseil et énergie solaire.
               </p>
+              <div className="flex flex-col gap-2 border-y border-line-dark py-5 text-[13.5px] text-ivory/85">
+                <a href="mailto:chancel@mundiis.com" className="transition-colors hover:text-coral">
+                  chancel@mundiis.com
+                </a>
+                <a href="tel:+2290164956484" className="transition-colors hover:text-coral">
+                  01 64 95 64 84
+                </a>
+                <a href="tel:+2290159444498" className="transition-colors hover:text-coral">
+                  01 59 44 44 98
+                </a>
+                <span className="text-ivory/68">Agla, Lot 3950, Cotonou</span>
+              </div>
               <div className="flex flex-col gap-2.5">
                 {pillars.map((p) => (
                   <span key={p.slug} className="flex items-center gap-2.5 text-[13.5px]">
