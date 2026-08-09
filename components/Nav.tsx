@@ -43,16 +43,21 @@ export default function Nav() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            className="cursor-hover flex h-10 w-10 flex-none flex-col items-center justify-center gap-[5px] rounded-full border border-line"
+            className="cursor-hover flex h-10 flex-none items-center gap-2.5 rounded-full border border-line pl-4 pr-3.5"
           >
-            <motion.span
-              animate={open ? { rotate: 45, y: 3 } : { rotate: 0, y: 0 }}
-              className="h-[1.4px] w-4 bg-ink"
-            />
-            <motion.span
-              animate={open ? { rotate: -45, y: -3 } : { rotate: 0, y: 0 }}
-              className="h-[1.4px] w-4 bg-ink"
-            />
+            <span className="font-mono text-[12px] uppercase tracking-[0.08em]">
+              {open ? "Fermer" : "Menu"}
+            </span>
+            <span className="flex h-4 w-4 flex-none flex-col items-center justify-center gap-[5px]">
+              <motion.span
+                animate={open ? { rotate: 45, y: 3 } : { rotate: 0, y: 0 }}
+                className="h-[1.4px] w-4 bg-ink"
+              />
+              <motion.span
+                animate={open ? { rotate: -45, y: -3 } : { rotate: 0, y: 0 }}
+                className="h-[1.4px] w-4 bg-ink"
+              />
+            </span>
           </button>
         </div>
       </div>
