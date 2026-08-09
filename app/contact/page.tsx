@@ -59,6 +59,9 @@ export default function ContactPage() {
                   </span>
                 ))}
               </div>
+              <p className="font-mono text-[10.5px] tracking-[0.06em] text-ivory/40">
+                RCCM Cotonou RB/COT/26 B 43320 — IFU 3202684200701
+              </p>
             </div>
           </Reveal>
         </div>

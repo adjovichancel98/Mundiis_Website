@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-2.5 pt-6 font-mono text-[10.5px] tracking-[0.08em]">
           <span>MUNDIIS — ENTREPRISE TECHNOLOGIQUE — BÉNIN</span>
-          <span>ÉQUIPEMENTS · LOGICIELS · IA &amp; DATA · CONSEIL · ÉNERGIE SOLAIRE</span>
+          <span>RCCM COTONOU RB/COT/26 B 43320 · IFU 3202684200701</span>
         </div>
       </div>
     </footer>
