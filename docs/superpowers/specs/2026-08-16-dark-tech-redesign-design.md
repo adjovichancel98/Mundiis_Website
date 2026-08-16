@@ -121,6 +121,56 @@ réutilisées, pas de nouvel ajout) :
 - **`PillarCard.tsx`** et les cards de la section stats : fond `ink2`,
   bordure `border-dark`, hover avec léger glow corail.
 
+## Nouvelles sections de contenu (home)
+
+Ajout de deux sections entre les pillars et le CTA final, avec du contenu
+de démonstration (fourni par moi, à remplacer par le user) :
+
+- **"Notre méthode"** : 3–4 étapes du processus de travail (ex. cadrage du
+  besoin → fourniture/déploiement → mise en service → suivi), présentées en
+  cards numérotées horizontales, avec `Reveal` en cascade — renforce
+  concrètement le positionnement "empire d'ingénieurs" en montrant une
+  méthode structurée plutôt qu'une simple promesse.
+- **"Pourquoi Mundiis" / crédibilité** : section courte orientée sérieux
+  professionnel — 3–4 points de confiance en cards (ex. engagement qualité,
+  accompagnement après livraison, ancrage local Bénin, réactivité) plutôt
+  que des logos de certification qui n'existent pas encore. Objectif :
+  qu'un visiteur perçoive une entreprise structurée et fiable, pas une
+  simple vitrine. Contenu concret fourni par moi, à ajuster/étoffer par le
+  user avec ses vraies preuves (certifications, chiffres, clients) ensuite.
+
+Ces deux sections réutilisent le même système de card que `PillarCard`
+(fond `ink2`, bordure subtile, hover avec glow — voir section Effets
+ci-dessous) pour rester cohérentes visuellement, pas un nouveau style de
+card par section.
+
+## Effets UI/UX minimalistes (site-wide sur les éléments partagés + home)
+
+Quatre effets, tous subtils et désactivés sous `prefers-reduced-motion:
+reduce` (via `lib/useMediaQuery.ts`, cohérent avec le reste du site) :
+
+- **Scroll reveal + hover glow sur les cards** : extension de l'usage
+  existant de `Reveal.tsx` (déjà en cascade sur les pillars) à toutes les
+  nouvelles cards (méthode, crédibilité) ; au survol, halo corail à faible
+  opacité (`--color-coral-glow`) en `box-shadow`/`filter`, pas de
+  changement de layout.
+- **Bordure animée au survol des cards** : la bordure (`--color-border-dark`)
+  s'illumine légèrement ou suit la position du curseur dans la card
+  (technique CSS `radial-gradient` positionné via variables CSS mises à
+  jour au `pointermove`, pattern déjà utilisé dans `TiltCard.tsx`/
+  `RejoindreArt3D.tsx` — réutilisé, pas réinventé).
+- **Spotlight curseur sur les sections sombres** : un halo lumineux discret
+  (radial-gradient corail à très faible opacité, ~150–200px) suit la souris
+  en arrière-plan des sections `ink`/`ink2` de la home — effet "lampe
+  torche" façon Linear/Stripe. Un seul composant réutilisable (ex.
+  `CursorSpotlight.tsx`), appliqué aux sections concernées, pas par card
+  individuellement.
+- **Transitions de page douces** : fade/léger slide (`framer-motion`,
+  `AnimatePresence` au niveau du layout `app/layout.tsx` ou d'un template
+  Next.js dédié) entre les routes — s'applique à tout le site dès cette
+  phase puisque c'est un changement au niveau layout, même si le contenu
+  des 7 pages secondaires n'est pas retouché.
+
 ## Section marquee (nouveau composant)
 
 `components/Marquee.tsx` a été supprimé (visible dans `git status`, non
@@ -149,9 +199,10 @@ visuel).
 - Pas de refonte des 7 pages secondaires (Phase 2, spec séparée).
 - Pas de changement de la structure de navigation ni du contenu métier des
   5 activités (`lib/pillars.ts`).
-- Pas de nouveau système de curseur/interactions au-delà de ce qui existe
-  déjà (`CustomCursor.tsx`, `MagneticButton.tsx`) — restylés, pas
-  réinventés.
+- Pas de refonte du curseur custom lui-même (`CustomCursor.tsx`) au-delà
+  d'un restyle — le nouveau `CursorSpotlight.tsx` (section Effets) est un
+  effet de fond additif, pas un remplacement du système de curseur
+  existant.
 - Pas de CMS/backend pour le marquee ou les stats — contenu statique en
   dur, comme le reste du site actuellement.
 - `RejoindreArt3D.tsx`/`TiltCard.tsx` non touchés.
