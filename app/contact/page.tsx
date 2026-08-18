@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const channels: { label: string; value: string; href?: string }[] = [
-  { label: "Email", value: "chancel@mundiis.com", href: "mailto:chancel@mundiis.com" },
+  { label: "Email", value: "contact@mundiis.com", href: "mailto:contact@mundiis.com" },
   { label: "Téléphone", value: "01 64 95 64 84", href: "tel:+2290164956484" },
   { label: "Téléphone", value: "01 59 44 44 98", href: "tel:+2290159444498" },
   { label: "Adresse", value: "Agla, Lot 3950, Cotonou" },
@@ -53,8 +53,8 @@ export default function ContactPage() {
             l&rsquo;équipe Mundiis revient vers vous rapidement.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <MagneticButton href="mailto:chancel@mundiis.com" variant="pill-light">
-              chancel@mundiis.com ↗
+            <MagneticButton href="mailto:contact@mundiis.com" variant="pill-light">
+              contact@mundiis.com ↗
             </MagneticButton>
             <MagneticButton href="tel:+2290164956484" variant="ghost">
               01 64 95 64 84

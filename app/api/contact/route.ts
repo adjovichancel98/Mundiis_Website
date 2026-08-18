@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "chancel@mundiis.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "contact@mundiis.com";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Mundiis <onboarding@resend.dev>";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

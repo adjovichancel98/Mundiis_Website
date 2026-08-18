@@ -34,10 +34,10 @@ export default function Footer() {
                 Coordonnées
               </h4>
               <a
-                href="mailto:chancel@mundiis.com"
+                href="mailto:contact@mundiis.com"
                 className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral"
               >
-                chancel@mundiis.com
+                contact@mundiis.com
               </a>
               <a
                 href="tel:+2290164956484"

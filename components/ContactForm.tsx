@@ -135,8 +135,8 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-[12.5px] text-coral">
           {errorMessage} Vous pouvez aussi écrire directement à{" "}
-          <a href="mailto:chancel@mundiis.com" className="underline">
-            chancel@mundiis.com
+          <a href="mailto:contact@mundiis.com" className="underline">
+            contact@mundiis.com
           </a>
           .
         </p>
