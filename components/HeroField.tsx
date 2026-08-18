@@ -27,17 +27,44 @@ const GradientFieldMaterial = shaderMaterial(
     uniform vec3 uCoral;
     varying vec2 vUv;
 
-    float grain(vec2 p) {
-      return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453123);
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453123);
     }
 
     void main() {
-      vec2 center = vec2(0.5, 0.45) + uMouse * 0.06;
-      float dist = distance(vUv, center);
-      float glow = 1.0 - smoothstep(0.0, 0.9, dist);
-      vec3 color = mix(uInk, uCoral, glow * 0.35);
-      float n = (grain(vUv * 500.0 + uTime * 6.0) - 0.5) * 0.035;
-      gl_FragColor = vec4(color + n, 1.0);
+      vec2 uv = vUv;
+      float spacing = 9.0;
+      vec2 gridUv = uv * spacing;
+      vec2 cellId = floor(gridUv + 0.5);
+      vec2 cellPos = gridUv - cellId;
+      float distToNode = length(cellPos);
+
+      vec2 gf = fract(gridUv);
+      float lx = 1.0 - smoothstep(0.0, 0.015, min(gf.x, 1.0 - gf.x));
+      float ly = 1.0 - smoothstep(0.0, 0.015, min(gf.y, 1.0 - gf.y));
+      float lines = clamp(lx + ly, 0.0, 1.0);
+
+      float phase = hash(cellId) * 6.2831;
+      float pulse = 0.5 + 0.5 * sin(uTime * 0.5 + phase);
+      float node = smoothstep(0.07, 0.0, distToNode) * (0.15 + 0.25 * pulse);
+
+      vec2 mouseUv = vec2(0.5, 0.5) + uMouse;
+      float distToMouse = distance(uv, mouseUv);
+      float mouseGlow = smoothstep(0.28, 0.0, distToMouse);
+      node += node * mouseGlow * 2.2;
+      lines *= (0.3 + mouseGlow * 1.3);
+
+      float vignette = 1.0 - distance(uv, vec2(0.5)) * 0.55;
+
+      vec3 color = uInk;
+      color += uCoral * lines * 0.035;
+      color += uCoral * node * 0.45;
+      color *= vignette;
+
+      float grain = (hash(uv * 500.0 + fract(uTime)) - 0.5) * 0.012;
+      color += grain;
+
+      gl_FragColor = vec4(color, 1.0);
     }
   `,
 );

@@ -4,7 +4,7 @@ import CoverageGrid from "@/components/CoverageGrid";
 import Spotlight from "@/components/Spotlight";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
-import Realisations from "@/components/Realisations";
+import RealisationsLink from "@/components/RealisationsLink";
 import SubCta from "@/components/SubCta";
 import { getPillar } from "@/lib/pillars";
 import { ConseilArt, FormationArt } from "@/components/illustrations/PageArt";
@@ -77,7 +77,7 @@ export default function Page() {
         </div>
       </section>
 
-      <Realisations items={pillar.caseStudies} />
+      <RealisationsLink />
       <SubCta title={pillar.subCta} />
     </>
   );

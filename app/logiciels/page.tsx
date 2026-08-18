@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import CoverageGrid from "@/components/CoverageGrid";
 import TechStack from "@/components/TechStack";
-import Realisations from "@/components/Realisations";
+import RealisationsLink from "@/components/RealisationsLink";
 import SubCta from "@/components/SubCta";
 import { getPillar } from "@/lib/pillars";
 import { LogicielsArt } from "@/components/illustrations/PageArt";
@@ -20,7 +20,7 @@ export default function Page() {
       <PageHero eyebrow={pillar.tag} title={pillar.title} text={pillar.intro} art={<LogicielsArt />} />
       <CoverageGrid eyebrow="Ce que ça couvre" title="Des outils construits pour votre usage" items={pillar.coverage} />
       <TechStack />
-      <Realisations items={pillar.caseStudies} />
+      <RealisationsLink />
       <SubCta title={pillar.subCta} />
     </>
   );

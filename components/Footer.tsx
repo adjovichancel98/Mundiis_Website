@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BrandMark from "./BrandMark";
-import { pillars } from "@/lib/pillars";
 
 export default function Footer() {
   return (
@@ -13,20 +12,6 @@ export default function Footer() {
           </Link>
 
           <div className="flex flex-wrap gap-10">
-            <div>
-              <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/40">
-                Activités
-              </h4>
-              {pillars.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/${p.slug}`}
-                  className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral"
-                >
-                  {p.title}
-                </Link>
-              ))}
-            </div>
             <div>
               <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/40">
                 Entreprise

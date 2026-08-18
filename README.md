@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mundiis — site Next.js
 
-## Getting Started
+Stack : **Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 + Framer Motion**.
 
-First, run the development server:
+## Démarrer
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puis ouvrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — une vraie route par page (`/equipements`, `/logiciels`, `/ia-data`,
+  `/conseil`, `/energie`, `/apropos`, `/rejoindre`, `/actualites`, `/contact`),
+  chacune server-rendue par Next.js.
+- `components/` — composants partagés (nav, footer, curseur personnalisé,
+  boutons magnétiques, titre cinétique, compteurs animés, illustrations SVG).
+- `lib/pillars.ts` — le contenu des 5 activités, centralisé (une seule source
+  de vérité réutilisée par la page d'accueil et les pages dédiées).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration requise avant mise en ligne
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Formulaire de contact** (`components/ContactForm.tsx` → `app/api/contact/route.ts`) :
+  envoie un email via [Resend](https://resend.com) (plan gratuit disponible).
+  Copier `.env.example` vers `.env.local` et renseigner `RESEND_API_KEY`
+  (créer un compte Resend, générer une clé). Sans cette variable, la route
+  API renvoie une erreur claire au lieu d'échouer silencieusement.
+  Pour la production, vérifier votre propre domaine d'envoi dans Resend et
+  renseigner `CONTACT_FROM_EMAIL` (sinon l'adresse de test `onboarding@resend.dev`
+  est utilisée, limitée en volume).
+- La page **Actualités** est une structure vide, prête à recevoir de vrais
+  articles (par exemple via un CMS headless ou des fichiers MDX).
 
-## Deploy on Vercel
+## Déploiement
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Le moyen le plus direct est [Vercel](https://vercel.com/new) (créateur de
+Next.js) : `vercel` en ligne de commande, ou en connectant le dépôt Git.
+Netlify et tout hébergeur compatible Node.js fonctionnent aussi.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Couleurs de la marque
+
+| Nom    | Valeur                                              |
+| ------ | ---------------------------------------------------- |
+| Encre  | `#111214`                                             |
+| Ivoire | `#F3F1EC`                                             |
+| Corail | `#FF5C39` (seul accent — ne pas en ajouter d'autre)   |

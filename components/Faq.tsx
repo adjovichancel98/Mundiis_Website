@@ -1,0 +1,37 @@
+const faqs = [
+  {
+    q: "Travaillez-vous avec des entreprises de toutes tailles ?",
+    a: "Oui — notre approche s'adapte au besoin, qu'il s'agisse d'un renouvellement de parc informatique ou d'un projet plus large combinant plusieurs métiers.",
+  },
+  {
+    q: "Faut-il forcément passer par les cinq métiers ?",
+    a: "Non. Beaucoup de clients commencent par un seul métier — souvent les équipements — puis élargissent selon leurs besoins.",
+  },
+  {
+    q: "Où intervenez-vous ?",
+    a: "Mundiis est basée au Bénin et intervient principalement auprès d'entreprises locales. Contactez-nous pour vérifier la faisabilité selon votre localisation.",
+  },
+  {
+    q: "L'accompagnement s'arrête-t-il après la livraison ?",
+    a: "Non — le conseil et le support continuent après la mise en service, que ce soit pour du matériel, un logiciel ou une installation solaire.",
+  },
+  {
+    q: "Comment démarrer un projet avec Mundiis ?",
+    a: "Contactez-nous en décrivant votre besoin : nous revenons vers vous pour comprendre le contexte avant de proposer quoi que ce soit.",
+  },
+];
+
+export default function Faq() {
+  return (
+    <div className="flex flex-col border-t border-line">
+      {faqs.map((item, i) => (
+        <details key={i} className="faqitem border-b border-line py-[18px]">
+          <summary className="relative flex cursor-pointer list-none items-center justify-between gap-4 pr-8 text-[15.5px] font-semibold">
+            {item.q}
+          </summary>
+          <p className="max-w-[68ch] pt-3 text-[14px] leading-[1.65] text-muted">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  );
+}

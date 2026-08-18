@@ -1,30 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import KineticHeading from "@/components/KineticHeading";
-import HeroMark from "@/components/HeroMark";
+import EditorialHeading from "@/components/EditorialHeading";
 import { HeroTriangle } from "@/components/illustrations/PageArt";
+import BrandMark from "@/components/BrandMark";
 import MagneticButton from "@/components/MagneticButton";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import HeroFieldBoundary from "@/components/HeroFieldBoundary";
-import { pillars } from "@/lib/pillars";
-import { pillarIcons } from "@/components/icons/PillarIcons";
+import HeroFieldClient from "@/components/HeroFieldClient";
+import EngineeringObjectClient from "@/components/EngineeringObjectClient";
+import FloatingShapesClient from "@/components/FloatingShapesClient";
+import InfoStrip from "@/components/InfoStrip";
+import MethodSection from "@/components/MethodSection";
 import { useMediaQuery } from "@/lib/useMediaQuery";
-
-const HeroField = dynamic(() => import("@/components/HeroField"), { ssr: false });
-
-function StaticHeroField() {
-  return (
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,92,57,0.22),transparent_70%)]"
-    />
-  );
-}
 
 export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -38,143 +27,82 @@ export default function HomePage() {
       {/* HERO */}
       <header
         ref={heroRef}
-        className="relative overflow-hidden bg-ink py-14 text-ivory sm:py-20 md:py-[116px]"
+        className="relative overflow-hidden bg-ink py-14 text-ivory sm:py-20 md:py-26"
       >
         <motion.div style={reduceMotion ? undefined : { y: fieldY }} className="absolute inset-0">
-          {reduceMotion ? (
-            <StaticHeroField />
-          ) : (
-            <HeroFieldBoundary fallback={<StaticHeroField />}>
-              <HeroField />
-            </HeroFieldBoundary>
-          )}
+          <HeroFieldClient />
         </motion.div>
         <HeroTriangle className="pointer-events-none absolute -right-[6%] -top-[10%] w-[60%] max-w-[520px] rotate-[8deg] opacity-[0.14] max-md:w-[80%] max-md:-right-[20%] max-md:opacity-[0.08]" />
+
         <motion.div
           style={reduceMotion ? undefined : { y: copyY }}
-          className="relative z-10 mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-8 px-5 sm:px-8 md:grid-cols-[1.15fr_0.85fr] md:gap-14"
+          className="relative z-10 mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-10 px-5 sm:px-8 md:grid-cols-[1.15fr_0.85fr] md:gap-14"
         >
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
-              Mundiis — Entreprise technologique, Bénin
+              Mundiis — Ingénierie informatique, Bénin
             </p>
-            <KineticHeading
-              text="Le matériel, le logiciel et l'énergie dont votre entreprise a besoin — reliés chez un seul partenaire."
-              className="mt-4 max-w-[17ch] text-balance font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ivory sm:text-[42px] md:text-[60px]"
-            />
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
-              className="mt-5 max-w-[52ch] text-[16px] leading-[1.65] text-ivory/72 sm:text-[18px]"
-            >
-              Mundiis fournit et livre les équipements informatiques dont les entreprises ont
-              besoin, développe leurs logiciels, intègre l&rsquo;intelligence artificielle et la
-              donnée, les conseille, et les équipe en énergie solaire.
-            </motion.p>
+            <Reveal delay={0.1}>
+              <EditorialHeading
+                lines={[
+                  [{ text: "Vous entrez dans", muted: true }],
+                  [{ text: "un empire" }],
+                  [{ text: "d'ingénieurs en informatique." }],
+                ]}
+                className="mt-4 max-w-[15ch] text-balance font-display text-[34px] leading-[1.05] tracking-tight sm:text-[46px] md:text-[64px]"
+              />
+            </Reveal>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.7 }}
-              className="mt-7 flex flex-wrap gap-3.5"
+              transition={{ delay: 0.6, duration: 0.7 }}
+              className="mt-8 flex flex-wrap items-center gap-6"
             >
-              <MagneticButton href="/contact" variant="primary">
-                Discuter d&rsquo;un projet
+              <MagneticButton href="/contact" variant="pill-light">
+                Discuter d&rsquo;un projet ↗
               </MagneticButton>
-              <MagneticButton href="/apropos" variant="ghost">
-                Pourquoi Mundiis ↓
-              </MagneticButton>
+              <p className="max-w-[34ch] text-[14.5px] leading-[1.6] text-ivory/65">
+                Matériel, logiciels, IA, conseil et énergie — une seule entreprise d&rsquo;ingénieurs
+                pour équiper et faire tourner votre infrastructure.
+              </p>
             </motion.div>
           </div>
-          <HeroMark />
+
+          <div className="mx-auto w-full max-w-85 md:max-w-none">
+            <EngineeringObjectClient />
+          </div>
         </motion.div>
       </header>
 
-      {/* PILLARS */}
-      <section className="border-y border-line bg-ivory py-14 sm:py-20 md:py-24" id="pillars">
-        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
-          <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
-              Ce que nous faisons
-            </p>
-            <KineticHeading
-              as="h2"
-              text="Cinq métiers, une seule entreprise"
-              className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]"
-            />
-            <p className="mt-3.5 text-[15.5px] leading-[1.65] text-muted">
-              Cliquez une activité pour voir en détail ce qu&rsquo;elle couvre.
-            </p>
-          </Reveal>
+      <InfoStrip />
 
-          <div className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-6">
-            {pillars.map((p, i) => {
-              const Icon = pillarIcons[p.slug];
-              const lead = i === 0;
-              return (
-                <Reveal
-                  key={p.slug}
-                  delay={i * 0.07}
-                  className={lead || i === 1 ? "sm:col-span-3" : "sm:col-span-2"}
-                >
-                  <Link
-                    href={`/${p.slug}`}
-                    data-cursor-label="Voir"
-                    className={`group flex h-full cursor-pointer flex-col gap-3.5 p-6 transition-colors sm:p-8 ${
-                      lead ? "bg-ink text-ivory hover:bg-[#1B1D22]" : "bg-paper hover:bg-white"
-                    }`}
-                  >
-                    <span
-                      className={`font-mono text-[10.5px] uppercase tracking-[0.1em] ${lead ? "text-coral" : "text-muted"}`}
-                    >
-                      {p.tag}
-                    </span>
-                    <Icon
-                      className={`h-8 w-8 transition-transform duration-300 group-hover:scale-[1.12] group-hover:-rotate-[4deg] ${lead ? "text-coral" : "text-ink"}`}
-                    />
-                    <h3
-                      className={`font-display text-[18.5px] font-extrabold tracking-tight ${lead ? "text-ivory" : ""}`}
-                    >
-                      {p.title}
-                    </h3>
-                    <p className={`text-[13.5px] leading-[1.6] ${lead ? "text-ivory/70" : "text-muted"}`}>
-                      {p.intro}
-                    </p>
-                    <span className="mt-auto pt-1 font-mono text-[11px] tracking-[0.05em] text-coral">
-                      Voir l&rsquo;activité →
-                    </span>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <MethodSection />
 
       {/* STATS */}
-      <section className="border-b border-line bg-paper py-14 sm:py-20 md:py-24">
-        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+      <section className="relative overflow-hidden border-b border-border-dark bg-ink2 py-14 sm:py-20 md:py-24">
+        <FloatingShapesClient />
+        <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal>
-            <div className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-3">
-              <div className="flex flex-col items-center gap-2 bg-ivory px-6 py-9 text-center sm:py-11">
+            <div className="grid grid-cols-1 gap-px overflow-hidden border border-border-dark bg-white/10 sm:grid-cols-3">
+              <div className="flex flex-col items-center gap-2 bg-ink px-6 py-9 text-center sm:py-11">
                 <Counter
                   target={5}
-                  className="font-display text-[42px] font-extrabold tracking-tight tabular-nums sm:text-[56px]"
+                  className="font-display text-[42px] font-extrabold tracking-tight tabular-nums text-ivory sm:text-[56px]"
                 />
-                <span className="text-[13px] text-muted">Métiers réunis chez Mundiis</span>
+                <span className="text-[13px] text-ivory/60">Métiers réunis chez Mundiis</span>
               </div>
-              <div className="flex flex-col items-center gap-2 bg-ivory px-6 py-9 text-center sm:py-11">
+              <div className="flex flex-col items-center gap-2 bg-ink px-6 py-9 text-center sm:py-11">
                 <Counter
                   target={1}
-                  className="font-display text-[42px] font-extrabold tracking-tight tabular-nums sm:text-[56px]"
+                  className="font-display text-[42px] font-extrabold tracking-tight tabular-nums text-ivory sm:text-[56px]"
                 />
-                <span className="text-[13px] text-muted">Entreprise, un seul interlocuteur</span>
+                <span className="text-[13px] text-ivory/60">Entreprise, un seul interlocuteur</span>
               </div>
-              <div className="flex flex-col items-center gap-2 bg-ivory px-6 py-9 text-center sm:py-11">
-                <span className="font-display text-[42px] font-extrabold tracking-tight sm:text-[56px]">
+              <div className="flex flex-col items-center gap-2 bg-ink px-6 py-9 text-center sm:py-11">
+                <span className="font-display text-[42px] font-extrabold tracking-tight text-ivory sm:text-[56px]">
                   Bénin
                 </span>
-                <span className="text-[13px] text-muted">Ancrage local</span>
+                <span className="text-[13px] text-ivory/60">Ancrage local</span>
               </div>
             </div>
           </Reveal>
@@ -182,22 +110,28 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-coral py-14 sm:py-20 md:py-24">
-        <Reveal className="mx-auto max-w-[1180px] px-5 sm:px-8">
+      <section className="relative overflow-hidden bg-coral py-14 sm:py-20 md:py-24">
+        <BrandMark
+          dotColor="#111214"
+          stemColor="#111214"
+          className="pointer-events-none absolute -bottom-10 -right-8 w-[160px] rotate-[10deg] opacity-[0.08] sm:w-[220px]"
+        />
+        <Reveal className="relative mx-auto max-w-[1180px] px-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-8">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink">Parlons-en</p>
-              <KineticHeading
+              <EditorialHeading
+                tone="light"
                 as="h2"
-                text="Un projet à équiper, à digitaliser, ou à alimenter ?"
-                className="mt-2.5 max-w-[16ch] text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[40px]"
+                lines={[[{ text: "Un projet à équiper," }], [{ text: "à digitaliser, ou à alimenter ?" }]]}
+                className="mt-2.5 max-w-[18ch] text-balance font-display text-[26px] leading-[1.15] tracking-tight sm:text-[40px]"
               />
               <p className="mt-3 max-w-[42ch] text-[15px] text-ink/72">
                 Décrivez votre besoin — matériel, logiciel, IA, conseil ou énergie solaire.
               </p>
             </div>
-            <MagneticButton href="/contact" variant="ink">
-              Contacter Mundiis
+            <MagneticButton href="/contact" variant="pill-dark">
+              Contacter Mundiis ↗
             </MagneticButton>
           </div>
         </Reveal>

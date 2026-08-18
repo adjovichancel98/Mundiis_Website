@@ -2,7 +2,6 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
-import BrandMark from "./BrandMark";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 
 export default function CustomCursor() {
@@ -11,7 +10,6 @@ export default function CustomCursor() {
   const enabled = fine && !reduce;
 
   const [hovering, setHovering] = useState(false);
-  const [label, setLabel] = useState<string | null>(null);
   const [plain, setPlain] = useState(false);
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
@@ -29,14 +27,11 @@ export default function CustomCursor() {
     function over(e: MouseEvent) {
       const target = e.target as HTMLElement;
       if (target.closest("[data-cursor-plain]")) {
-        setLabel(null);
         setHovering(false);
         setPlain(true);
         return;
       }
       setPlain(false);
-      const labelTarget = target.closest<HTMLElement>("[data-cursor-label]");
-      setLabel(labelTarget?.dataset.cursorLabel ?? null);
       setHovering(!!target.closest("a, button, .cursor-hover, input, textarea, select"));
     }
     window.addEventListener("mousemove", move);
@@ -53,20 +48,14 @@ export default function CustomCursor() {
   return (
     <motion.div
       aria-hidden="true"
-      className={`pointer-events-none fixed left-0 top-0 z-[100] flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full ${
-        label ? "bg-ink" : ""
-      }`}
-      style={{ x: springX, y: springY, scale: plain ? 0.35 : label ? 3.2 : hovering ? 1.9 : 1 }}
+      className="pointer-events-none fixed left-0 top-0 z-[100] flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
+      style={{ x: springX, y: springY, scale: plain ? 0.35 : hovering ? 1.9 : 1 }}
       transition={{ scale: { type: "tween", duration: 0.18 } }}
     >
       {plain ? (
         <span className="h-full w-full rounded-full bg-coral" />
-      ) : label ? (
-        <span className="whitespace-nowrap font-mono text-[7px] uppercase tracking-[0.08em] text-ivory">
-          {label}
-        </span>
       ) : (
-        <BrandMark />
+        <span className="h-2 w-2 rounded-full bg-coral" />
       )}
     </motion.div>
   );

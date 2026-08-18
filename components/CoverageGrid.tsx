@@ -26,7 +26,7 @@ export default function CoverageGrid({
         </Reveal>
         <Reveal>
           <div
-            className="grid grid-cols-1 gap-[3px] overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2"
+            className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2"
             style={tilt ? { perspective: 2000 } : undefined}
           >
             {items.map((item, i) => {

@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
+import PageTransition from "@/components/PageTransition";
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -21,13 +27,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`h-full ${bricolageGrotesque.variable}`}>
+    <html lang="fr" className={`h-full ${geistSans.variable} ${geistMono.variable}`}>
       <body className="flex min-h-full flex-col overflow-x-hidden bg-ivory text-ink antialiased">
         <ScrollProgress />
         <CustomCursor />
         <Nav />
-        <Marquee />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

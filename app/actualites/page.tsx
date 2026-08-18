@@ -25,7 +25,7 @@ export default function ActualitesPage() {
 
       <section className="py-14 sm:py-20 md:py-24">
         <Reveal className="mx-auto max-w-[1180px] px-5 sm:px-8">
-          <div className="flex items-start gap-3.5 rounded-[14px] border border-line bg-paper px-6 py-6">
+          <div className="flex items-start gap-3.5 border border-line bg-paper px-6 py-6">
             <span className="mt-[7px] h-2 w-2 flex-none rounded-full bg-coral" />
             <div>
               <h3 className="mb-1 text-[15.5px] font-semibold">Bientôt disponible</h3>
