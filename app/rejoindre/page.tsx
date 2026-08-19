@@ -4,7 +4,7 @@ import SubCta from "@/components/SubCta";
 import Reveal from "@/components/Reveal";
 import CursorSpotlight from "@/components/CursorSpotlight";
 import RolesExplorer from "@/components/RolesExplorer";
-import OpenPosition from "@/components/OpenPosition";
+import OpenPositionsList from "@/components/OpenPositionsList";
 
 export const metadata: Metadata = {
   title: "Rejoindre Mundiis",
@@ -43,8 +43,8 @@ export default function RejoindrePage() {
         text="Mundiis regroupe des équipes techniques (matériel, réseau), des développeurs, des spécialistes IA & data, des consultants et des techniciens solaires. Le recrutement suit la croissance de chaque métier, pas un plan figé."
       />
 
-      {/* OPEN POSITION */}
-      <OpenPosition />
+      {/* OPEN POSITIONS */}
+      <OpenPositionsList />
 
       {/* WHY */}
       <CursorSpotlight className="border-b border-border-dark bg-ink py-14 sm:py-20 md:py-24">
