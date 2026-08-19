@@ -3,7 +3,6 @@ import PageHero from "@/components/PageHero";
 import SubCta from "@/components/SubCta";
 import Reveal from "@/components/Reveal";
 import CursorSpotlight from "@/components/CursorSpotlight";
-import RolesExplorer from "@/components/RolesExplorer";
 import OpenPositionsList from "@/components/OpenPositionsList";
 
 export const metadata: Metadata = {
@@ -73,9 +72,6 @@ export default function RejoindrePage() {
           </div>
         </div>
       </CursorSpotlight>
-
-      {/* PROFILS */}
-      <RolesExplorer />
 
       {/* PROCESS */}
       <section className="py-14 sm:py-20 md:py-24">
