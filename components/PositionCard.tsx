@@ -47,24 +47,26 @@ export default function PositionCard({ position }: { position: Position }) {
             </div>
           </div>
 
-          <div className="flex flex-col justify-between gap-10 border-t border-line bg-ink p-7 text-ivory sm:p-10 md:border-l md:border-t-0">
-            <div>
-              <h3 className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
-                Candidature
-              </h3>
-              <p className="mt-3 max-w-[26ch] text-[14px] leading-[1.6] text-ivory/70">
-                CV et lettre de motivation à envoyer à
-              </p>
-              <a
-                href={applyHref}
-                className="cursor-hover mt-2 inline-block break-all text-[14.5px] font-semibold text-ivory underline decoration-white/25 underline-offset-4 transition-colors hover:text-coral hover:decoration-coral"
-              >
-                {APPLY_EMAIL}
-              </a>
+          <div className="border-t border-line bg-ink p-7 text-ivory sm:p-10 md:border-l md:border-t-0">
+            <div className="flex flex-col gap-8 md:sticky md:top-28">
+              <div>
+                <h3 className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
+                  Candidature
+                </h3>
+                <p className="mt-3 max-w-[26ch] text-[14px] leading-[1.6] text-ivory/70">
+                  CV et lettre de motivation à envoyer à
+                </p>
+                <a
+                  href={applyHref}
+                  className="cursor-hover mt-2 inline-block break-all text-[14.5px] font-semibold text-ivory underline decoration-white/25 underline-offset-4 transition-colors hover:text-coral hover:decoration-coral"
+                >
+                  {APPLY_EMAIL}
+                </a>
+              </div>
+              <MagneticButton href={applyHref} variant="pill-light" className="w-fit">
+                Postuler →
+              </MagneticButton>
             </div>
-            <MagneticButton href={applyHref} variant="pill-light" className="w-fit">
-              Postuler →
-            </MagneticButton>
           </div>
         </div>
       </div>
