@@ -9,7 +9,7 @@ import CursorSpotlight from "@/components/CursorSpotlight";
 export const metadata: Metadata = {
   title: "Contact — Mundiis",
   description:
-    "Matériel, logiciel, IA, conseil ou énergie solaire — décrivez votre besoin, l'équipe Mundiis revient vers vous.",
+    "Contactez Mundiis à Cotonou, au Bénin, pour un projet d'équipement informatique, logiciel, IA, conseil ou énergie solaire — l'équipe revient vers vous rapidement.",
 };
 
 const channels: { label: string; value: string; href?: string }[] = [

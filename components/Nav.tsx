@@ -6,12 +6,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import BrandMark from "./BrandMark";
 
 const links = [
-  { href: "/", label: "Accueil" },
+  { href: "/apropos", label: "Pourquoi Mundiis" },
   { href: "/services", label: "Nos services" },
   { href: "/projets", label: "Nos projets" },
   { href: "/creations", label: "Mundiis Labs" },
   { href: "/rejoindre", label: "Rejoindre" },
-  { href: "/actualites", label: "Actualités" },
   { href: "/contact", label: "Contact" },
 ];
 

@@ -8,9 +8,9 @@ import LabsGrid from "@/components/LabsGrid";
 import { HubArt } from "@/components/illustrations/PageArt";
 
 export const metadata: Metadata = {
-  title: "Pourquoi Mundiis",
+  title: "Pourquoi Mundiis — Bénin",
   description:
-    "Équiper une entreprise en technologie demande normalement de coordonner plusieurs prestataires. Mundiis réunit ces métiers au même endroit.",
+    "Équiper une entreprise en technologie demande normalement de coordonner plusieurs prestataires. Mundiis réunit ces métiers au même endroit, à Cotonou et dans tout le Bénin.",
 };
 
 const why = [
@@ -95,6 +95,39 @@ export default function AproposPage() {
         </div>
       </section>
 
+      {/* TEAM */}
+      <section className="border-t border-line py-14 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+          <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Qui sommes-nous</p>
+            <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
+              Derrière Mundiis
+            </h2>
+          </Reveal>
+          <Reveal>
+            <div className="flex flex-col gap-6 border border-line bg-paper p-7 sm:flex-row sm:items-start sm:gap-8 sm:p-9">
+              <span className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-ink font-display text-[19px] font-bold text-ivory">
+                CA
+              </span>
+              <div>
+                <h3 className="text-[18px] font-semibold tracking-tight">Chancel Adjovi Agbogbo</h3>
+                <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-coral">
+                  Fondateur — Ingénieur IA &amp; Data Science
+                </p>
+                <p className="mt-3.5 max-w-[62ch] text-[14.5px] leading-[1.7] text-muted">
+                  Ingénieur en intelligence artificielle et data science (Epitech Bénin), titulaire d&rsquo;un
+                  titre RNCP niveau 7 en architecture logicielle (ETNA). Expérience en développement
+                  logiciel, business intelligence et conseil en transformation digitale, notamment auprès
+                  de SENS Bénin et de la GIZ Bénin. Chancel a fondé Mundiis pour réunir sous un même toit
+                  les métiers techniques pratiqués sur le terrain : équipement, logiciel, donnée et
+                  conseil.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* LABS */}
       <LabsGrid />
 
@@ -122,7 +155,7 @@ export default function AproposPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-14 sm:py-20 md:py-24">
+      <section id="faq" className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">

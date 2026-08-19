@@ -1,7 +1,8 @@
 export type CaseStudy = {
   client: string;
+  problem: string;
+  approach: string;
   result: string;
-  text: string;
 };
 
 export type Pillar = {
@@ -9,6 +10,7 @@ export type Pillar = {
   tag: string;
   title: string;
   intro: string;
+  metaDescription: string;
   coverage: { title: string; text: string }[];
   spotlight: { title: string; text: string };
   caseStudies: CaseStudy[];
@@ -22,6 +24,8 @@ export const pillars: Pillar[] = [
     title: "Équipements informatiques",
     intro:
       "Fourniture et livraison de matériel informatique et technologique. C'est le métier sur lequel Mundiis est né, et celui qui reste au centre de l'entreprise.",
+    metaDescription:
+      "Fourniture, livraison et mise en service d'équipements informatiques — postes de travail, serveurs, réseau — pour entreprises à Cotonou et dans tout le Bénin.",
     coverage: [
       {
         title: "Postes de travail & portables",
@@ -47,13 +51,17 @@ export const pillars: Pillar[] = [
     caseStudies: [
       {
         client: "Banque régionale, Cotonou",
-        result: "Renouvellement de parc complet",
-        text: "Renouvellement complet du parc informatique d'une agence : postes de travail, imprimantes réseau et mise en service sur site, sans interruption de l'activité.",
+        problem: "Parc informatique vieillissant à renouveler sans interrompre l'activité de l'agence.",
+        approach:
+          "Renouvellement complet des postes de travail et imprimantes réseau, mise en service sur site échelonnée.",
+        result: "Parc entièrement renouvelé, aucune interruption de l'activité.",
       },
       {
         client: "Groupe industriel, multi-sites",
-        result: "Standardisation multi-sites",
-        text: "Standardisation du matériel entre plusieurs sites de production — même configuration partout, support simplifié, livraison échelonnée pour ne pas arrêter la production.",
+        problem: "Matériel hétérogène entre plusieurs sites de production, support compliqué.",
+        approach:
+          "Standardisation de la configuration sur tous les sites, livraison échelonnée pour ne pas arrêter la production.",
+        result: "Même configuration partout, support simplifié.",
       },
     ],
     subCta: "Un besoin en matériel à équiper ?",
@@ -64,6 +72,8 @@ export const pillars: Pillar[] = [
     title: "Logiciels & solutions digitales",
     intro:
       "Développement de logiciels et de solutions digitales sur mesure, pensés pour les besoins réels de nos clients — pas des outils génériques.",
+    metaDescription:
+      "Développement de logiciels et d'applications web sur mesure pour entreprises au Bénin — outils internes, plateformes métier, solutions digitales.",
     coverage: [
       {
         title: "Développement sur mesure",
@@ -89,13 +99,16 @@ export const pillars: Pillar[] = [
     caseStudies: [
       {
         client: "Entreprise de distribution",
-        result: "Outil interne sur mesure",
-        text: "Remplacement d'un suivi sur tableur par une application web sur mesure pour la gestion des commandes et des stocks — moins d'erreurs de saisie, visibilité en temps réel pour les équipes terrain.",
+        problem: "Suivi des commandes et des stocks géré sur tableur, source d'erreurs de saisie.",
+        approach: "Développement d'une application web sur mesure pour la gestion des commandes et des stocks.",
+        result: "Moins d'erreurs de saisie, visibilité en temps réel pour les équipes terrain.",
       },
       {
         client: "Enseigne retail",
-        result: "Application de fidélité connectée à la caisse",
-        text: "Application de fidélité et de commande en ligne connectée au système de caisse existant, pensée pour être prise en main sans formation lourde.",
+        problem: "Pas de programme de fidélité ni de commande en ligne connectés à la caisse existante.",
+        approach:
+          "Développement d'une application de fidélité et de commande en ligne connectée au système de caisse, pensée pour une prise en main rapide.",
+        result: "Application de fidélité et de commande en ligne opérationnelle, sans formation lourde nécessaire.",
       },
     ],
     subCta: "Un logiciel ou un outil digital à construire ?",
@@ -106,6 +119,8 @@ export const pillars: Pillar[] = [
     title: "Intelligence artificielle & donnée",
     intro:
       "Intégration de l'intelligence artificielle et de la donnée dans les outils et les processus de nos clients.",
+    metaDescription:
+      "Intégration d'intelligence artificielle et de solutions data pour entreprises à Cotonou et au Bénin — automatisation, analyse de données, formation.",
     coverage: [
       {
         title: "Intégration dans l'existant",
@@ -131,13 +146,15 @@ export const pillars: Pillar[] = [
     caseStudies: [
       {
         client: "Compagnie d'assurance",
-        result: "Tri des dossiers automatisé",
-        text: "Automatisation du tri et de la pré-vérification des dossiers clients à partir des documents reçus — les équipes se concentrent sur les cas qui demandent un vrai arbitrage.",
+        problem: "Tri et pré-vérification des dossiers clients effectués manuellement, chronophage.",
+        approach: "Automatisation du tri et de la pré-vérification à partir des documents reçus.",
+        result: "Les équipes se concentrent sur les cas qui demandent un vrai arbitrage.",
       },
       {
         client: "Réseau de commerces",
-        result: "Ventes centralisées en temps réel",
-        text: "Centralisation des ventes de plusieurs points de vente dans un tableau de bord unique, remplaçant des rapports envoyés manuellement chaque semaine.",
+        problem: "Ventes de plusieurs points de vente suivies via des rapports envoyés manuellement chaque semaine.",
+        approach: "Centralisation des données de vente dans un tableau de bord unique.",
+        result: "Suivi des ventes en temps réel, fin des rapports manuels hebdomadaires.",
       },
     ],
     subCta: "Une donnée à faire parler, un processus à automatiser ?",
@@ -148,6 +165,8 @@ export const pillars: Pillar[] = [
     title: "Conseil informatique",
     intro:
       "Accompagnement et conseil en informatique, pour aider nos clients à faire les bons choix technologiques avant d'investir.",
+    metaDescription:
+      "Conseil en stratégie IT et transformation technologique pour entreprises béninoises — audit, feuille de route, accompagnement à Cotonou.",
     coverage: [
       {
         title: "Audit de l'existant",
@@ -173,13 +192,15 @@ export const pillars: Pillar[] = [
     caseStudies: [
       {
         client: "Entreprise en croissance",
-        result: "Audit et feuille de route priorisée",
-        text: "Diagnostic de l'infrastructure existante avant une levée de fonds — points bloquants identifiés et feuille de route technologique priorisée par budget et impact.",
+        problem: "Besoin de clarifier l'état de l'infrastructure technologique avant une levée de fonds.",
+        approach: "Diagnostic complet de l'infrastructure existante.",
+        result: "Points bloquants identifiés, feuille de route technologique priorisée par budget et impact.",
       },
       {
         client: "PME multi-sites",
-        result: "Déploiement ERP et formation des équipes",
-        text: "Accompagnement du choix d'un nouvel ERP jusqu'à sa mise en route, avec une session de formation dédiée pour que les équipes soient autonomes dès le premier jour.",
+        problem: "Besoin d'un nouvel ERP, sans repère pour choisir et déployer la bonne solution.",
+        approach: "Accompagnement du choix de l'ERP jusqu'à sa mise en route, avec une session de formation dédiée.",
+        result: "Équipes autonomes sur le nouvel ERP dès le premier jour.",
       },
     ],
     subCta: "Besoin d'y voir clair avant d'investir ?",
@@ -190,6 +211,8 @@ export const pillars: Pillar[] = [
     title: "Énergie solaire",
     intro:
       "Fourniture d'équipements d'énergie solaire, pour des entreprises qui veulent plus d'autonomie énergétique.",
+    metaDescription:
+      "Installation de solutions d'énergie solaire — panneaux, stockage batterie — pour entreprises à Cotonou et dans tout le Bénin.",
     coverage: [
       {
         title: "Fourniture d'équipements",
@@ -212,13 +235,15 @@ export const pillars: Pillar[] = [
     caseStudies: [
       {
         client: "Site industriel",
-        result: "Installation solaire dimensionnée sur site",
-        text: "Installation solaire dimensionnée sur la consommation réelle du site — production couvrant l'essentiel des besoins en journée et amortissant les coupures du réseau public.",
+        problem: "Dépendance aux coupures du réseau électrique public sur le site industriel.",
+        approach: "Installation solaire dimensionnée sur la consommation réelle du site.",
+        result: "Production couvrant l'essentiel des besoins en journée, coupures du réseau public amorties.",
       },
       {
         client: "Immeuble de bureaux",
-        result: "Stockage batterie pour les heures de pointe",
-        text: "Équipement solaire couplé à des batteries pour absorber les pics de consommation en journée, réduisant la dépendance au réseau aux heures les plus chargées.",
+        problem: "Pics de consommation électrique en journée fortement dépendants du réseau.",
+        approach: "Équipement solaire couplé à des batteries de stockage.",
+        result: "Dépendance au réseau réduite aux heures les plus chargées.",
       },
     ],
     subCta: "Un projet d'autonomie énergétique ?",

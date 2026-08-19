@@ -19,6 +19,9 @@ export default function Footer() {
               <Link href="/apropos" className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral">
                 Pourquoi Mundiis
               </Link>
+              <Link href="/apropos#faq" className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral">
+                FAQ
+              </Link>
               <Link href="/rejoindre" className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral">
                 Rejoindre
               </Link>
@@ -52,7 +55,12 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-2.5 pt-6 font-mono text-[10.5px] tracking-[0.08em]">
           <span>MUNDIIS — ENTREPRISE TECHNOLOGIQUE — BÉNIN</span>
-          <span>RCCM COTONOU RB/COT/26 B 43320 · IFU 3202684200701</span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span>RCCM COTONOU RB/COT/26 B 43320 · IFU 3202684200701</span>
+            <Link href="/confidentialite" className="text-ivory/70 transition-colors hover:text-coral">
+              Confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

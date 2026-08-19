@@ -68,7 +68,16 @@ export default function ProjectsGrid() {
                   <p className="mt-1 text-balance font-display text-[19px] font-extrabold tracking-tight sm:text-[21px]">
                     {item.result}
                   </p>
-                  <p className="mt-2.5 text-[14px] leading-[1.6] text-muted">{item.text}</p>
+                  <dl className="mt-3.5 flex flex-col gap-2.5 border-t border-line/70 pt-3.5">
+                    <div>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40">Problème</dt>
+                      <dd className="mt-0.5 text-[13.5px] leading-[1.55] text-muted">{item.problem}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40">Approche</dt>
+                      <dd className="mt-0.5 text-[13.5px] leading-[1.55] text-muted">{item.approach}</dd>
+                    </div>
+                  </dl>
                 </motion.div>
               );
             })}

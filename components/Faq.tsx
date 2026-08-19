@@ -19,6 +19,14 @@ const faqs = [
     q: "Comment démarrer un projet avec Mundiis ?",
     a: "Contactez-nous en décrivant votre besoin : nous revenons vers vous pour comprendre le contexte avant de proposer quoi que ce soit.",
   },
+  {
+    q: "Combien coûte un projet ?",
+    a: "Chaque projet est chiffré sur devis — le besoin varie fortement d'une entreprise à l'autre, qu'il s'agisse de matériel, de logiciel, d'IA, de conseil ou d'énergie solaire. Décrivez votre projet et nous revenons vers vous avec une estimation.",
+  },
+  {
+    q: "Combien de temps prend un projet ?",
+    a: "Cela dépend de la nature et de l'ampleur du projet. Nous donnons une estimation de délai dès le premier échange, une fois le besoin cadré.",
+  },
 ];
 
 export default function Faq() {

@@ -11,7 +11,7 @@ const pillar = getPillar("ia-data")!;
 
 export const metadata: Metadata = {
   title: `${pillar.title} — Mundiis`,
-  description: pillar.intro,
+  description: pillar.metaDescription,
 };
 
 export default function Page() {
@@ -25,7 +25,7 @@ export default function Page() {
       />
       <Spotlight title={pillar.spotlight.title} text={pillar.spotlight.text} art={<PilotArt />} />
       <RealisationsLink />
-      <SubCta title={pillar.subCta} />
+      <SubCta title={pillar.subCta} note="Sur devis" />
     </>
   );
 }

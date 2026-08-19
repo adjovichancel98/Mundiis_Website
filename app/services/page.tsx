@@ -6,7 +6,7 @@ import ServicesEditorial from "@/components/ServicesEditorial";
 export const metadata: Metadata = {
   title: "Nos services — Mundiis",
   description:
-    "Cinq métiers réunis chez un seul partenaire : équipements, logiciels & digital, IA & data, conseil, énergie solaire.",
+    "Cinq métiers d'ingénierie réunis chez un seul partenaire technologique à Cotonou, au Bénin : équipements informatiques, logiciels & digital, IA & data, conseil, énergie solaire.",
 };
 
 export default function ServicesPage() {
@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
       <ServicesEditorial />
 
-      <SubCta title="Un besoin qui touche plusieurs de ces métiers ?" />
+      <SubCta title="Un besoin qui touche plusieurs de ces métiers ?" note="Sur devis" />
     </>
   );
 }

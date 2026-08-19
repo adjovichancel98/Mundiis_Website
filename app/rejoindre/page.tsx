@@ -8,7 +8,7 @@ import RolesExplorer from "@/components/RolesExplorer";
 export const metadata: Metadata = {
   title: "Rejoindre Mundiis",
   description:
-    "Mundiis regroupe des équipes techniques, des développeurs, des spécialistes IA & data, des consultants et des techniciens solaires.",
+    "Recrutement chez Mundiis à Cotonou, au Bénin : développeurs, spécialistes IA & data, consultants et techniciens solaires rejoignent une équipe d'ingénierie technologique.",
 };
 
 const reasons = [

@@ -11,7 +11,7 @@ const pillar = getPillar("equipements")!;
 
 export const metadata: Metadata = {
   title: `${pillar.title} — Mundiis`,
-  description: pillar.intro,
+  description: pillar.metaDescription,
 };
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
       <CoverageGrid eyebrow="Ce que ça couvre" title="Du poste de travail à l'infrastructure" items={pillar.coverage} />
       <Spotlight title={pillar.spotlight.title} text={pillar.spotlight.text} art={<DeliveryArt />} />
       <RealisationsLink />
-      <SubCta title={pillar.subCta} />
+      <SubCta title={pillar.subCta} note="Sur devis" />
     </>
   );
 }

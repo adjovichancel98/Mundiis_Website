@@ -36,7 +36,7 @@ const formationPhases = [
 
 export const metadata: Metadata = {
   title: `${pillar.title} — Mundiis`,
-  description: pillar.intro,
+  description: pillar.metaDescription,
 };
 
 export default function Page() {
@@ -78,7 +78,7 @@ export default function Page() {
       </section>
 
       <RealisationsLink />
-      <SubCta title={pillar.subCta} />
+      <SubCta title={pillar.subCta} note="Sur devis" />
     </>
   );
 }
