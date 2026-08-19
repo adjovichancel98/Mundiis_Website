@@ -16,7 +16,7 @@ export default function Spotlight({
         <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[0.6fr_1fr] sm:gap-14">
           <div className="mx-auto w-full max-w-[220px] sm:max-w-none sm:w-3/5">{art}</div>
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Zoom sur un point</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">Zoom sur un point</p>
             <h2 className="mt-2.5 text-balance font-display text-[22px] font-extrabold tracking-tight sm:text-[30px]">
               {title}
             </h2>

@@ -8,7 +8,7 @@ export default function RealisationsLink() {
         <p className="text-[14.5px] text-muted">Envie de voir des exemples concrets ?</p>
         <Link
           href="/projets"
-          className="cursor-hover inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-ink transition-colors hover:text-coral"
+          className="cursor-hover inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-ink transition-colors hover:text-coral-text"
         >
           Voir nos réalisations →
         </Link>

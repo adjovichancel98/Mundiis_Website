@@ -32,7 +32,7 @@ export default async function PositionPage({ params }: PageProps<"/rejoindre/[sl
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Link
             href="/rejoindre"
-            className="cursor-hover inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-muted transition-colors hover:text-coral"
+            className="cursor-hover inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-muted transition-colors hover:text-coral-text"
           >
             ← Rejoindre Mundiis
           </Link>

@@ -94,7 +94,7 @@ export default function ContactPage() {
                         href={c.href}
                         className="group flex items-center justify-between gap-4 border-b border-border-dark py-3 text-[13.5px] transition-colors"
                       >
-                        <span className="text-ivory/45">{c.label}</span>
+                        <span className="text-ivory/50">{c.label}</span>
                         <span className="text-ivory transition-colors group-hover:text-coral">
                           {c.value}
                         </span>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                         key={i}
                         className="flex items-center justify-between gap-4 border-b border-border-dark py-3 text-[13.5px]"
                       >
-                        <span className="text-ivory/45">{c.label}</span>
+                        <span className="text-ivory/50">{c.label}</span>
                         <span className="text-ivory">{c.value}</span>
                       </div>
                     ),
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <p className="mb-3 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
+                  <p className="mb-3 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/50">
                     Comment ça se passe
                   </p>
                   <div className="flex flex-col gap-3">
@@ -127,7 +127,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <p className="font-mono text-[10px] tracking-[0.06em] text-ivory/35">
+                <p className="font-mono text-[10px] tracking-[0.06em] text-ivory/55">
                   RCCM Cotonou RB/COT/26 B 43320 — IFU 3202684200701
                 </p>
               </div>

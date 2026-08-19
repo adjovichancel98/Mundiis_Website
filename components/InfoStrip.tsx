@@ -10,7 +10,7 @@ export default function InfoStrip() {
         </p>
         <Link
           href="/contact"
-          className="cursor-hover inline-flex w-fit items-center gap-1.5 border-b border-ink pb-0.5 text-[13.5px] font-semibold text-ink transition-colors hover:border-coral hover:text-coral"
+          className="cursor-hover inline-flex w-fit items-center gap-1.5 border-b border-ink pb-0.5 text-[13.5px] font-semibold text-ink transition-colors hover:border-coral hover:text-coral-text"
         >
           Contacter Mundiis →
         </Link>

@@ -59,8 +59,8 @@ export default function ProjectsGrid() {
                   className="bg-paper px-6 py-7 transition-colors hover:bg-white sm:p-8"
                 >
                   <div className="flex items-center gap-2">
-                    <Icon className="h-4 w-4 flex-none text-coral" />
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-coral">
+                    <Icon className="h-4 w-4 flex-none text-coral-text" />
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-coral-text">
                       {item.pillarTitle}
                     </span>
                   </div>
@@ -70,11 +70,11 @@ export default function ProjectsGrid() {
                   </p>
                   <dl className="mt-3.5 flex flex-col gap-2.5 border-t border-line/70 pt-3.5">
                     <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40">Problème</dt>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/60">Problème</dt>
                       <dd className="mt-0.5 text-[13.5px] leading-[1.55] text-muted">{item.problem}</dd>
                     </div>
                     <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40">Approche</dt>
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/60">Approche</dt>
                       <dd className="mt-0.5 text-[13.5px] leading-[1.55] text-muted">{item.approach}</dd>
                     </div>
                   </dl>

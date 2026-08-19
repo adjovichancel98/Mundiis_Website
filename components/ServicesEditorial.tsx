@@ -17,7 +17,7 @@ export default function ServicesEditorial() {
               >
                 <Icon className="h-8 w-8 flex-none text-coral/40 transition-colors duration-300 group-hover:text-coral sm:mt-2 sm:h-10 sm:w-10" />
                 <div>
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-ivory/35">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-ivory/55">
                     {p.tag}
                   </span>
                   <h3 className="mt-3 text-balance font-display text-[30px] font-extrabold tracking-tight text-ivory transition-colors duration-300 group-hover:text-coral sm:text-[42px]">

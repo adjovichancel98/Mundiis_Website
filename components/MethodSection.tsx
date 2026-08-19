@@ -50,7 +50,7 @@ export default function MethodSection() {
             <Reveal key={s.n} delay={i * 0.08}>
               <div className="h-full bg-ink px-6 py-8 transition-colors duration-300 hover:bg-ink2 sm:px-7 sm:py-9">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="font-mono text-[12px] text-ivory/35">{s.n}</span>
+                  <span className="font-mono text-[12px] text-ivory/55">{s.n}</span>
                   <Image
                     src={s.img}
                     alt=""

@@ -54,8 +54,8 @@ function PositionRow({ position, index }: { position: Position; index: number })
         </span>
 
         <div className="relative">
-          <span className="font-mono text-[11px] font-semibold text-coral">0{index + 1}</span>
-          <h3 className="mt-1.5 font-display text-[21px] font-extrabold tracking-tight text-ink transition-colors group-hover:text-coral sm:text-[24px]">
+          <span className="font-mono text-[11px] font-semibold text-coral-text">0{index + 1}</span>
+          <h3 className="mt-1.5 font-display text-[21px] font-extrabold tracking-tight text-ink transition-colors group-hover:text-coral-text sm:text-[24px]">
             {position.title}
           </h3>
           <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
@@ -77,7 +77,7 @@ export default function OpenPositionsList() {
     <section className="border-b border-line bg-paper py-14 sm:py-20 md:py-24">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <Reveal className="mb-9 max-w-[62ch] sm:mb-12">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Postes ouverts</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">Postes ouverts</p>
           <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
             {positions.length} poste{positions.length > 1 ? "s" : ""} à pourvoir en ce moment
           </h2>

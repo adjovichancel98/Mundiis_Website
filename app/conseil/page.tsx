@@ -50,7 +50,7 @@ export default function Page() {
       <section className="border-t border-line bg-paper py-14 sm:py-20 md:py-24">
         <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-8 px-5 sm:px-8 md:grid-cols-2 md:gap-16">
           <Reveal>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Formation</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">Formation</p>
             <h2 className="mt-2.5 text-balance font-display text-[24px] font-extrabold tracking-tight sm:text-[30px]">
               Former vos équipes à l&rsquo;intelligence artificielle
             </h2>
@@ -66,7 +66,7 @@ export default function Page() {
           <Reveal delay={0.1} className="flex flex-col">
             {formationPhases.map((phase) => (
               <div key={phase.wk} className="grid grid-cols-[86px_1fr] gap-4 border-t border-line py-4 last:border-b">
-                <span className="pt-0.5 font-mono text-[12px] text-coral">{phase.wk}</span>
+                <span className="pt-0.5 font-mono text-[12px] text-coral-text">{phase.wk}</span>
                 <div>
                   <h3 className="text-[14.5px] font-semibold">{phase.title}</h3>
                   <p className="mt-0.5 text-[13px] leading-[1.55] text-muted">{phase.text}</p>

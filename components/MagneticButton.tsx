@@ -7,7 +7,7 @@ import type { ReactNode, MouseEvent as ReactMouseEvent } from "react";
 const variants = {
   primary: "rounded-lg bg-coral text-ink hover:bg-coral-hover",
   ghost: "rounded-lg border border-white/25 text-ivory hover:border-coral hover:text-coral",
-  "ghost-ink": "rounded-lg border border-line text-ink hover:border-coral hover:text-coral",
+  "ghost-ink": "rounded-lg border border-line text-ink hover:border-coral hover:text-coral-text",
   ink: "rounded-lg bg-ink text-ivory hover:bg-[#24262c]",
   "pill-light": "rounded-full bg-ivory text-ink hover:bg-white",
   "pill-dark": "rounded-full bg-ink text-ivory hover:bg-[#24262c]",

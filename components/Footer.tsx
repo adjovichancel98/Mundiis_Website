@@ -13,7 +13,7 @@ export default function Footer() {
 
           <div className="flex flex-wrap gap-10">
             <div>
-              <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/40">
+              <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/50">
                 Entreprise
               </h4>
               <Link href="/apropos" className="block py-1 text-[13.5px] text-ivory/70 transition-all hover:translate-x-[3px] hover:text-coral">
@@ -33,7 +33,7 @@ export default function Footer() {
               </Link>
             </div>
             <div>
-              <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/40">
+              <h4 className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.1em] text-ivory/50">
                 Coordonnées
               </h4>
               <a

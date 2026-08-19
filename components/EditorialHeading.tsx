@@ -10,7 +10,7 @@ type Props = {
 /** Large display heading mixing full-weight/opacity and muted/light segments across explicit lines, editorial-style. */
 export default function EditorialHeading({ lines, as: Tag = "h1", tone = "dark", className = "" }: Props) {
   const strong = tone === "dark" ? "text-ivory" : "text-ink";
-  const muted = tone === "dark" ? "text-ivory/35" : "text-ink/35";
+  const muted = tone === "dark" ? "text-ivory/42" : "text-ink/50";
 
   return (
     <Tag className={className}>

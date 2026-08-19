@@ -106,7 +106,7 @@ export default function ContactForm() {
               className={`cursor-hover border px-3 py-1.5 text-[13px] transition-colors ${
                 activity === a
                   ? "border-coral bg-coral text-ink"
-                  : "border-line text-ink/70 hover:border-coral hover:text-coral"
+                  : "border-line text-ink/70 hover:border-coral hover:text-coral-text"
               }`}
             >
               {a}
@@ -133,7 +133,7 @@ export default function ContactForm() {
       </MagneticButton>
 
       {status === "error" && (
-        <p className="text-[12.5px] text-coral">
+        <p className="text-[12.5px] text-coral-text">
           {errorMessage} Vous pouvez aussi écrire directement à{" "}
           <a href="mailto:contact@mundiis.com" className="underline">
             contact@mundiis.com

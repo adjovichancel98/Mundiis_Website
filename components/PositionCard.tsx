@@ -29,7 +29,7 @@ export default function PositionCard({ position }: { position: Position }) {
               {position.sections.map((s, i) => (
                 <div key={s.title} className="py-8 sm:py-10">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-[12px] font-semibold text-coral">0{i + 1}</span>
+                    <span className="font-mono text-[12px] font-semibold text-coral-text">0{i + 1}</span>
                     <h2 className="font-display text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">
                       {s.title}
                     </h2>
@@ -50,7 +50,7 @@ export default function PositionCard({ position }: { position: Position }) {
           <div className="border-t border-line bg-ink p-7 text-ivory sm:p-10 md:border-l md:border-t-0">
             <div className="flex flex-col gap-8 md:sticky md:top-28">
               <div>
-                <h3 className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
+                <h3 className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/50">
                   Candidature
                 </h3>
                 <p className="mt-3 max-w-[26ch] text-[14px] leading-[1.6] text-ivory/70">

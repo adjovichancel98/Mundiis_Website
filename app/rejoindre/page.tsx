@@ -61,7 +61,7 @@ export default function RejoindrePage() {
             {reasons.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.08}>
                 <div className="h-full bg-ink px-6 py-7 transition-colors duration-300 hover:bg-ink2 sm:px-7 sm:py-8">
-                  <span className="font-mono text-[12px] text-ivory/35">0{i + 1}</span>
+                  <span className="font-mono text-[12px] text-ivory/55">0{i + 1}</span>
                   <h3 className="mt-3 font-display text-[17px] font-extrabold tracking-tight text-ivory">
                     {r.title}
                   </h3>
@@ -77,7 +77,7 @@ export default function RejoindrePage() {
       <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">
               Comment postuler
             </p>
             <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
@@ -88,7 +88,7 @@ export default function RejoindrePage() {
           <div className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.06} className="h-full bg-ivory px-6 py-7 transition-colors hover:bg-paper">
-                <span className="font-mono text-[12px] text-coral">{s.n}</span>
+                <span className="font-mono text-[12px] text-coral-text">{s.n}</span>
                 <h3 className="mt-3 font-display text-[16.5px] font-extrabold tracking-tight">{s.title}</h3>
                 <p className="mt-2 text-[13.5px] leading-[1.55] text-muted">{s.text}</p>
               </Reveal>

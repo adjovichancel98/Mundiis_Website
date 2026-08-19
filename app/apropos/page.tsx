@@ -90,7 +90,7 @@ export default function AproposPage() {
                       key={row.k}
                       className="grid grid-cols-1 gap-1 border-b border-border-dark py-4 sm:grid-cols-[140px_1fr] sm:gap-6"
                     >
-                      <dt className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
+                      <dt className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/50">
                         {row.k}
                       </dt>
                       <dd className="text-[13.5px] text-ivory/75">{row.v}</dd>
@@ -107,7 +107,7 @@ export default function AproposPage() {
       <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">
               Notre vision
             </p>
             <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
@@ -145,7 +145,7 @@ export default function AproposPage() {
             ].map((phase, i) => (
               <Reveal key={phase.yr} delay={i * 0.08}>
                 <div className="grid grid-cols-1 gap-2 border-t border-line py-6 last:border-b sm:grid-cols-[140px_1fr] sm:gap-6">
-                  <span className="font-mono text-[12.5px] font-semibold text-coral">{phase.yr}</span>
+                  <span className="font-mono text-[12.5px] font-semibold text-coral-text">{phase.yr}</span>
                   <div>
                     <h3 className="mb-1.5 text-[16.5px] font-semibold">{phase.title}</h3>
                     <p className="max-w-[58ch] text-[14px] leading-[1.6] text-muted">{phase.text}</p>
@@ -164,7 +164,7 @@ export default function AproposPage() {
       <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">
               Ce qui nous distingue
             </p>
             <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
@@ -187,7 +187,7 @@ export default function AproposPage() {
       <section id="faq" className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">
               Questions fréquentes
             </p>
             <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">

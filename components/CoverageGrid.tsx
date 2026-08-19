@@ -19,7 +19,7 @@ export default function CoverageGrid({
     <section className="py-14 sm:py-20 md:py-24">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">{eyebrow}</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral-text">{eyebrow}</p>
           <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
             {title}
           </h2>
