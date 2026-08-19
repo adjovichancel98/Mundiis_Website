@@ -5,7 +5,15 @@ import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import Faq from "@/components/Faq";
 import LabsGrid from "@/components/LabsGrid";
+import EditorialHeading from "@/components/EditorialHeading";
+import CursorSpotlight from "@/components/CursorSpotlight";
 import { HubArt } from "@/components/illustrations/PageArt";
+
+const credentials = [
+  { k: "Formation", v: "Master IA & Data Science — Epitech Bénin" },
+  { k: "Certification", v: "RNCP Niveau 7, Architecture logicielle — ETNA" },
+  { k: "Expérience", v: "Conseil en transformation digitale — SENS Bénin, GIZ Bénin" },
+];
 
 export const metadata: Metadata = {
   title: "Pourquoi Mundiis — Bénin",
@@ -42,40 +50,61 @@ export default function AproposPage() {
       />
 
       {/* TEAM */}
-      <section className="py-14 sm:py-20 md:py-24">
-        <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
-          <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Qui sommes-nous</p>
-            <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
-              Derrière Mundiis
-            </h2>
-          </Reveal>
-          <Reveal>
-            <div className="flex flex-col gap-6 border border-line bg-paper p-7 sm:flex-row sm:items-start sm:gap-8 sm:p-9">
-              <span className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-ink font-display text-[19px] font-bold text-ivory">
-                CA
-              </span>
-              <div>
-                <h3 className="text-[18px] font-semibold tracking-tight">Chancel Adjovi Agbogbo</h3>
-                <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-coral">
-                  Fondateur — Ingénieur IA &amp; Data Science
-                </p>
-                <p className="mt-3.5 max-w-[62ch] text-[14.5px] leading-[1.7] text-muted">
-                  Ingénieur en intelligence artificielle et data science (Epitech Bénin), titulaire d&rsquo;un
-                  titre RNCP niveau 7 en architecture logicielle (ETNA). Expérience en développement
-                  logiciel, business intelligence et conseil en transformation digitale, notamment auprès
-                  de SENS Bénin et de la GIZ Bénin. Chancel a fondé Mundiis pour réunir sous un même toit
-                  les métiers techniques pratiqués sur le terrain : équipement, logiciel, donnée et
-                  conseil.
-                </p>
+      <section className="border-y border-border-dark bg-ink py-16 text-ivory sm:py-24 md:py-28">
+        <CursorSpotlight className="mx-auto max-w-[1180px] px-5 sm:px-8">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-[380px_1fr] md:items-center md:gap-16">
+            <Reveal>
+              <div className="relative aspect-[4/5] w-full max-w-[380px] overflow-hidden border border-border-dark">
+                <Image
+                  src="/team/chancel-adjovi.jpg"
+                  alt="Chancel Adjovi Agbogbo, fondateur de Mundiis"
+                  fill
+                  sizes="(min-width: 768px) 380px, 100vw"
+                  className="object-cover"
+                />
+                <span className="absolute left-0 top-0 h-1.5 w-16 bg-coral" />
               </div>
+            </Reveal>
+
+            <div>
+              <Reveal>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">Qui sommes-nous</p>
+                <EditorialHeading
+                  tone="dark"
+                  as="h2"
+                  lines={[[{ text: "Chancel Adjovi Agbogbo,", muted: true }], [{ text: "fondateur de Mundiis." }]]}
+                  className="mt-3 max-w-[16ch] text-balance font-display text-[28px] leading-[1.1] tracking-tight sm:text-[38px] md:text-[46px]"
+                />
+              </Reveal>
+              <Reveal delay={0.08}>
+                <p className="mt-5 max-w-[58ch] text-[15px] leading-[1.75] text-ivory/65">
+                  Ingénieur en intelligence artificielle et data science, Chancel a fondé Mundiis pour
+                  réunir sous un même toit les métiers techniques qu&rsquo;il a pratiqués sur le terrain —
+                  équipement, logiciel, donnée et conseil.
+                </p>
+              </Reveal>
+              <Reveal delay={0.14}>
+                <dl className="mt-8 flex flex-col border-t border-border-dark">
+                  {credentials.map((row) => (
+                    <div
+                      key={row.k}
+                      className="grid grid-cols-1 gap-1 border-b border-border-dark py-4 sm:grid-cols-[140px_1fr] sm:gap-6"
+                    >
+                      <dt className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/40">
+                        {row.k}
+                      </dt>
+                      <dd className="text-[13.5px] text-ivory/75">{row.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </Reveal>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </CursorSpotlight>
       </section>
 
       {/* VISION */}
-      <section className="border-t border-line py-14 sm:py-20 md:py-24">
+      <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
           <Reveal className="mb-9 max-w-[62ch] sm:mb-14">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-coral">
