@@ -8,7 +8,11 @@ export default function Counter({ target, className }: { target: number; classNa
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(target);
+
+  useEffect(() => {
+    setValue(0);
+  }, []);
 
   useEffect(() => {
     if (!inView) return;
