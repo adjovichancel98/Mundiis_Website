@@ -48,7 +48,7 @@ export default function ContactPage() {
             lines={[[{ text: "Parlons de", muted: true }], [{ text: "votre projet" }]]}
             className="mt-4 max-w-[16ch] text-balance font-display text-[38px] leading-[1.05] tracking-tight sm:text-[52px] md:text-[68px]"
           />
-          <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.65] text-ivory/70 sm:text-[18px]">
+          <p className="mt-5 max-w-[52ch] text-[17.5px] leading-[1.7] text-ivory/70 sm:text-[18px]">
             Matériel, logiciel, IA, conseil ou énergie solaire — décrivez votre besoin,
             l&rsquo;équipe Mundiis revient vers vous rapidement.
           </p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 <div>
                   <BrandMark className="w-9" dotColor="#ff5c39" stemColor="#f3f1ec" />
                   <h3 className="mt-5 font-display text-[19px] font-extrabold text-ivory">Mundiis</h3>
-                  <p className="mt-2.5 text-[13.5px] leading-[1.6] text-ivory/65">
+                  <p className="mt-2.5 text-[15px] leading-[1.65] text-ivory/65">
                     Entreprise technologique basée au Bénin — équipements, logiciels, IA &amp; data,
                     conseil et énergie solaire.
                   </p>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                         <span className="flex h-5 w-5 flex-none items-center justify-center border border-coral font-mono text-[10px] text-coral">
                           {i + 1}
                         </span>
-                        <span className="pt-px text-[13px] leading-normal text-ivory/70">{step}</span>
+                        <span className="pt-px text-[14.5px] leading-[1.5] text-ivory/70">{step}</span>
                       </div>
                     ))}
                   </div>

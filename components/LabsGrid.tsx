@@ -16,7 +16,7 @@ export default function LabsGrid() {
           <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight text-ivory sm:text-[32px]">
             Nos produits en construction
           </h2>
-          <p className="mt-3.5 max-w-[62ch] text-[15.5px] leading-[1.65] text-ivory/70">
+          <p className="mt-3.5 max-w-[62ch] text-[17px] leading-[1.7] text-ivory/70">
             Une partie de Mundiis invente ses propres outils. Voici sur quoi l&rsquo;équipe
             travaille en ce moment.
           </p>
@@ -30,7 +30,7 @@ export default function LabsGrid() {
               <h3 className="mb-1.5 mt-3.5 font-display text-[19px] font-extrabold tracking-tight text-ivory">
                 {lab.title}
               </h3>
-              <p className="text-[13.5px] leading-[1.6] text-ivory/68">{lab.text}</p>
+              <p className="text-[15px] leading-[1.65] text-ivory/68">{lab.text}</p>
             </Reveal>
           ))}
         </div>

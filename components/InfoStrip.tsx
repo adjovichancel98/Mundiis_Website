@@ -20,7 +20,7 @@ export default function InfoStrip() {
         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-ivory">
           <IaDataIcon className="h-4 w-4" />
         </div>
-        <p className="text-[14px] leading-[1.55] text-ink/75">
+        <p className="text-[15.5px] leading-[1.6] text-ink/75">
           Découvrez notre méthode d&rsquo;ingénieurs, du cadrage au suivi.
         </p>
         <div className="flex gap-1.5">

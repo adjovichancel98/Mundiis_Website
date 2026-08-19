@@ -56,7 +56,7 @@ export default function ConfidentialitePage() {
           {sections.map((s) => (
             <Reveal key={s.title}>
               <h2 className="mb-2 text-[16.5px] font-semibold">{s.title}</h2>
-              <p className="max-w-[68ch] text-[14.5px] leading-[1.7] text-muted">{s.body}</p>
+              <p className="max-w-[68ch] text-[16px] leading-[1.75] text-muted">{s.body}</p>
             </Reveal>
           ))}
         </div>

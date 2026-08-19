@@ -61,7 +61,7 @@ function PositionRow({ position, index }: { position: Position; index: number })
           <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
             {position.location}
           </p>
-          <p className="mt-3 max-w-[58ch] text-[14px] leading-[1.6] text-muted">{position.summary}</p>
+          <p className="mt-3 max-w-[58ch] text-[15.5px] leading-[1.65] text-muted">{position.summary}</p>
         </div>
 
         <div className="relative">

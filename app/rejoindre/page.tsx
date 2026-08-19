@@ -65,7 +65,7 @@ export default function RejoindrePage() {
                   <h3 className="mt-3 font-display text-[17px] font-extrabold tracking-tight text-ivory">
                     {r.title}
                   </h3>
-                  <p className="mt-2.5 text-[13.5px] leading-[1.6] text-ivory/65">{r.text}</p>
+                  <p className="mt-2.5 text-[15px] leading-[1.65] text-ivory/65">{r.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -90,7 +90,7 @@ export default function RejoindrePage() {
               <Reveal key={s.n} delay={i * 0.06} className="h-full bg-ivory px-6 py-7 transition-colors hover:bg-paper">
                 <span className="font-mono text-[12px] text-coral-text">{s.n}</span>
                 <h3 className="mt-3 font-display text-[16.5px] font-extrabold tracking-tight">{s.title}</h3>
-                <p className="mt-2 text-[13.5px] leading-[1.55] text-muted">{s.text}</p>
+                <p className="mt-2 text-[15px] leading-[1.6] text-muted">{s.text}</p>
               </Reveal>
             ))}
           </div>

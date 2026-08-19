@@ -54,7 +54,7 @@ export default function Page() {
             <h2 className="mt-2.5 text-balance font-display text-[24px] font-extrabold tracking-tight sm:text-[30px]">
               Former vos équipes à l&rsquo;intelligence artificielle
             </h2>
-            <p className="mt-3.5 max-w-[52ch] text-[14.5px] leading-[1.65] text-muted">
+            <p className="mt-3.5 max-w-[52ch] text-[16px] leading-[1.7] text-muted">
               Un programme structuré pour amener des équipes non techniques — banques,
               institutions, PME — à comprendre et utiliser l&rsquo;IA dans leur métier au
               quotidien. Progressif, concret, ancré dans vos cas réels.
@@ -69,7 +69,7 @@ export default function Page() {
                 <span className="pt-0.5 font-mono text-[12px] text-coral-text">{phase.wk}</span>
                 <div>
                   <h3 className="text-[14.5px] font-semibold">{phase.title}</h3>
-                  <p className="mt-0.5 text-[13px] leading-[1.55] text-muted">{phase.text}</p>
+                  <p className="mt-0.5 text-[14.5px] leading-[1.6] text-muted">{phase.text}</p>
                 </div>
               </div>
             ))}

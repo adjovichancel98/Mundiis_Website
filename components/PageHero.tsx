@@ -28,7 +28,7 @@ export default function PageHero({
             lines={lines}
             className="mt-3.5 max-w-[15ch] text-balance font-display text-[34px] leading-[1.05] tracking-tight sm:text-[46px] md:text-[64px]"
           />
-          <p className="mt-4 max-w-[50ch] text-[15.5px] leading-[1.65] text-ivory/70">{text}</p>
+          <p className="mt-4 max-w-[50ch] text-[17px] leading-[1.7] text-ivory/70">{text}</p>
         </Reveal>
         {art && (
           <Reveal delay={0.1} className="flex items-center justify-center">

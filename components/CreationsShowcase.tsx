@@ -118,7 +118,7 @@ export default function CreationsShowcase() {
                     {statusLabels[item.status]}
                   </span>
                 </div>
-                <p className="mt-2.5 flex-1 text-[13.5px] leading-[1.6] text-ivory/65">{item.desc}</p>
+                <p className="mt-2.5 flex-1 text-[15px] leading-[1.65] text-ivory/65">{item.desc}</p>
                 <div className="mt-5 flex items-center justify-between border-t border-border-dark pt-3.5">
                   <span className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ivory/55">
                     {item.category}
@@ -166,7 +166,7 @@ export default function CreationsShowcase() {
               <h3 className="mt-4 font-display text-[28px] font-extrabold tracking-tight text-ivory sm:text-[32px]">
                 {open.name}
               </h3>
-              <p className="mt-3 text-[15px] leading-[1.7] text-ivory/70">{open.desc}</p>
+              <p className="mt-3 text-[16.5px] leading-[1.75] text-ivory/70">{open.desc}</p>
 
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 border-t border-border-dark pt-5 font-mono text-[11px] uppercase tracking-[0.06em] text-ivory/50">
                 <span>{open.category}</span>
@@ -180,7 +180,7 @@ export default function CreationsShowcase() {
                 >
                   Demander une démo →
                 </Link>
-                <p className="max-w-[32ch] text-[12px] leading-normal text-ivory/50">
+                <p className="max-w-[32ch] text-[13.5px] leading-[1.5] text-ivory/50">
                   Pas encore de démo publique en ligne — on vous montre le produit en direct.
                 </p>
               </div>

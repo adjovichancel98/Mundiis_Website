@@ -23,7 +23,7 @@ export default function ServicesEditorial() {
                   <h3 className="mt-3 text-balance font-display text-[30px] font-extrabold tracking-tight text-ivory transition-colors duration-300 group-hover:text-coral sm:text-[42px]">
                     {p.title}
                   </h3>
-                  <p className="mt-4 max-w-[62ch] text-[15.5px] leading-[1.75] text-ivory/60">
+                  <p className="mt-4 max-w-[62ch] text-[17px] leading-[1.8] text-ivory/60">
                     {p.intro}
                   </p>
                   <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-coral opacity-0 transition-all duration-300 group-hover:translate-x-1.5 group-hover:opacity-100">

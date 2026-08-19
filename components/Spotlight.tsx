@@ -20,7 +20,7 @@ export default function Spotlight({
             <h2 className="mt-2.5 text-balance font-display text-[22px] font-extrabold tracking-tight sm:text-[30px]">
               {title}
             </h2>
-            <p className="mt-3.5 max-w-[58ch] text-[14.5px] leading-[1.65] text-muted">{text}</p>
+            <p className="mt-3.5 max-w-[58ch] text-[16px] leading-[1.7] text-muted">{text}</p>
           </div>
         </div>
       </Reveal>

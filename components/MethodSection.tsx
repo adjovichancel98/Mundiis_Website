@@ -62,7 +62,7 @@ export default function MethodSection() {
                 <h3 className="mt-3 font-display text-[17px] font-extrabold tracking-tight text-ivory">
                   {s.title}
                 </h3>
-                <p className="mt-2.5 text-[13.5px] leading-[1.6] text-ivory/65">{s.text}</p>
+                <p className="mt-2.5 text-[15px] leading-[1.65] text-ivory/65">{s.text}</p>
               </div>
             </Reveal>
           ))}

@@ -36,7 +36,7 @@ export default function PositionCard({ position }: { position: Position }) {
                   </div>
                   <ul className="mt-4 flex flex-col gap-2.5 pl-[30px]">
                     {s.items.map((item) => (
-                      <li key={item} className="flex gap-3 text-[14.5px] leading-[1.65] text-muted">
+                      <li key={item} className="flex gap-3 text-[16px] leading-[1.7] text-muted">
                         <span className="mt-[9px] h-[3px] w-[3px] flex-none rounded-full bg-coral" />
                         {item}
                       </li>
@@ -53,7 +53,7 @@ export default function PositionCard({ position }: { position: Position }) {
                 <h3 className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ivory/50">
                   Candidature
                 </h3>
-                <p className="mt-3 max-w-[26ch] text-[14px] leading-[1.6] text-ivory/70">
+                <p className="mt-3 max-w-[26ch] text-[15.5px] leading-[1.65] text-ivory/70">
                   CV et lettre de motivation à envoyer à
                 </p>
                 <a

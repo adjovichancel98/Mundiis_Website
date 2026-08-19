@@ -26,7 +26,7 @@ export default function TechStack() {
           <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
             Les technologies que nous savons assembler
           </h2>
-          <p className="mt-3.5 text-[15.5px] leading-[1.65] text-muted">
+          <p className="mt-3.5 text-[17px] leading-[1.7] text-muted">
             Le bon outil dépend du projet : un site vitrine ne se construit pas comme un logiciel
             métier. Voici les briques que nos équipes maîtrisent pour composer la solution adaptée
             à chaque client.
@@ -56,7 +56,7 @@ export default function TechStack() {
         </Reveal>
 
         <Reveal>
-          <p className="mt-9 max-w-[68ch] border-t border-line pt-7 text-[13.5px] leading-[1.65] text-muted">
+          <p className="mt-9 max-w-[68ch] border-t border-line pt-7 text-[15px] leading-[1.7] text-muted">
             Ce site Mundiis, lui, a été codé à la main en React / Next.js — sans CMS — pour rester
             le plus rapide et le plus maintenable possible. Pour un client qui a besoin de gérer
             son contenu au quotidien, WordPress et Elementor restent souvent le choix le plus

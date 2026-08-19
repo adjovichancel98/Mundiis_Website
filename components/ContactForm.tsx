@@ -64,7 +64,7 @@ export default function ContactForm() {
     return (
       <div className="border border-line bg-paper px-6 py-8 text-center">
         <p className="font-display text-[19px] font-extrabold tracking-tight text-ink">Message envoyé ✓</p>
-        <p className="mt-2 text-[14px] leading-[1.6] text-muted">
+        <p className="mt-2 text-[15.5px] leading-[1.65] text-muted">
           Merci — l&rsquo;équipe Mundiis revient vers vous rapidement.
         </p>
       </div>

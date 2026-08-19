@@ -51,7 +51,7 @@ export default function HomeHero() {
             <MagneticButton href="/contact" variant="pill-light">
               Contacter Mundiis ↗
             </MagneticButton>
-            <p className="max-w-[34ch] text-[14.5px] leading-[1.6] text-ivory/65">
+            <p className="max-w-[34ch] text-[16px] leading-[1.65] text-ivory/65">
               Matériel, logiciels, IA, conseil et énergie — une seule entreprise d&rsquo;ingénieurs
               pour équiper et faire tourner votre infrastructure.
             </p>

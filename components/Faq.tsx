@@ -37,7 +37,7 @@ export default function Faq() {
           <summary className="relative flex cursor-pointer list-none items-center justify-between gap-4 pr-8 text-[15.5px] font-semibold">
             {item.q}
           </summary>
-          <p className="max-w-[68ch] pt-3 text-[14px] leading-[1.65] text-muted">{item.a}</p>
+          <p className="max-w-[68ch] pt-3 text-[15.5px] leading-[1.7] text-muted">{item.a}</p>
         </details>
       ))}
     </div>

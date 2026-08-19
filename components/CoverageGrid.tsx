@@ -35,7 +35,7 @@ export default function CoverageGrid({
                   <span className="mt-[7px] h-2 w-2 flex-none rounded-full bg-coral" />
                   <div>
                     <h3 className="mb-1 text-[15.5px] font-semibold">{item.title}</h3>
-                    <p className="text-[13.5px] leading-[1.55] text-muted">{item.text}</p>
+                    <p className="text-[15px] leading-[1.6] text-muted">{item.text}</p>
                   </div>
                 </>
               );

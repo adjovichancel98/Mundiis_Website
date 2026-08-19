@@ -77,7 +77,7 @@ export default function AproposPage() {
                 />
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="mt-5 max-w-[58ch] text-[15px] leading-[1.75] text-ivory/65">
+                <p className="mt-5 max-w-[58ch] text-[16.5px] leading-[1.8] text-ivory/65">
                   Ingénieur en intelligence artificielle et data science, Chancel a fondé Mundiis pour
                   réunir sous un même toit les métiers techniques qu&rsquo;il a pratiqués sur le terrain —
                   équipement, logiciel, donnée et conseil.
@@ -113,7 +113,7 @@ export default function AproposPage() {
             <h2 className="mt-2.5 text-balance font-display text-[26px] font-extrabold tracking-tight sm:text-[32px]">
               Le socle technologique d&rsquo;un groupe qui grandit
             </h2>
-            <p className="mt-3.5 max-w-[62ch] text-[15.5px] leading-[1.65] text-muted">
+            <p className="mt-3.5 max-w-[62ch] text-[17px] leading-[1.7] text-muted">
               Mundiis entre par la technologie, puis s&rsquo;étend méthodiquement vers les secteurs
               qui construisent une région. L&rsquo;ambition dépasse le seul numérique : sur quinze à
               vingt ans, devenir un groupe diversifié au service du développement de l&rsquo;Afrique
@@ -148,7 +148,7 @@ export default function AproposPage() {
                   <span className="font-mono text-[12.5px] font-semibold text-coral-text">{phase.yr}</span>
                   <div>
                     <h3 className="mb-1.5 text-[16.5px] font-semibold">{phase.title}</h3>
-                    <p className="max-w-[58ch] text-[14px] leading-[1.6] text-muted">{phase.text}</p>
+                    <p className="max-w-[58ch] text-[15.5px] leading-[1.65] text-muted">{phase.text}</p>
                   </div>
                 </div>
               </Reveal>
@@ -176,7 +176,7 @@ export default function AproposPage() {
               <Reveal key={w.title} delay={i * 0.1} className="bg-paper px-7 py-7 transition-colors hover:bg-white sm:px-8">
                 <Image src={w.img} alt="" width={56} height={56} className="h-12 w-12" />
                 <h3 className="mb-1.5 mt-3.5 text-[17px] font-semibold">{w.title}</h3>
-                <p className="text-[14px] leading-[1.6] text-muted">{w.text}</p>
+                <p className="text-[15.5px] leading-[1.65] text-muted">{w.text}</p>
               </Reveal>
             ))}
           </div>
