@@ -13,30 +13,34 @@ export default function OpenPositionsList() {
           </h2>
         </Reveal>
 
-        <Reveal>
-          <div className="flex flex-col border-t border-line">
-            {positions.map((p) => (
+        <div className="flex flex-col gap-4">
+          {positions.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 0.06}>
               <Link
-                key={p.slug}
                 href={`/rejoindre/${p.slug}`}
-                className="group flex flex-col gap-3 border-b border-line py-7 transition-colors hover:bg-white sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-8"
+                className="group relative flex flex-col gap-6 overflow-hidden border border-line bg-white px-7 py-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/15 hover:shadow-[0_24px_60px_-28px_rgba(17,18,20,0.28)] sm:flex-row sm:items-center sm:justify-between sm:px-9 sm:py-8"
               >
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 bg-coral transition-transform duration-300 ease-out group-hover:scale-y-100"
+                />
                 <div>
-                  <h3 className="font-display text-[19px] font-extrabold tracking-tight text-ink transition-colors group-hover:text-coral sm:text-[21px]">
+                  <span className="font-mono text-[11px] font-semibold text-coral">0{i + 1}</span>
+                  <h3 className="mt-1.5 font-display text-[21px] font-extrabold tracking-tight text-ink transition-colors group-hover:text-coral sm:text-[24px]">
                     {p.title}
                   </h3>
                   <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
                     {p.location}
                   </p>
-                  <p className="mt-2.5 max-w-[58ch] text-[14px] leading-[1.6] text-muted">{p.summary}</p>
+                  <p className="mt-3 max-w-[58ch] text-[14px] leading-[1.6] text-muted">{p.summary}</p>
                 </div>
-                <span className="inline-flex flex-none items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-coral transition-transform group-hover:translate-x-1.5">
+                <span className="cursor-hover inline-flex flex-none items-center gap-2 rounded-full border border-line px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.06em] text-ink transition-colors group-hover:border-coral group-hover:bg-coral group-hover:text-ink">
                   Voir le poste →
                 </span>
               </Link>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
